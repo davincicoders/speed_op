@@ -4,11 +4,7 @@ This is a Ruby on Rails application I developed as part of the Building the Tool
 
 Team Members:
 
-      - Lucas
-      - Johnathan
-      - Sergey
-      - Riley
-      - Reza
+      - Sergey Skumaov
 
 Features:
 
