@@ -9,6 +9,7 @@ Team Members:
       - Sean Connery
       - Lucas Henderson
       - Riley Jones
+      - Reza Mamdani
 
 Features:
 
