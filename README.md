@@ -4,7 +4,7 @@ This is a Ruby on Rails application I developed as part of the Building the Tool
 
 Team Members:
 
-      - Sergey Skumaov
+      - Sergey Skumatov
       - Jonathan Speek
 
 Features:
