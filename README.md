@@ -6,6 +6,7 @@ Team Members:
 
       - Sergey Skumatov
       - Jonathan Speek
+      - Riley Jones
 
 Features:
 
