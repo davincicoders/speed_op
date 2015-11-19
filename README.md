@@ -8,6 +8,7 @@ Team Members:
       - Jonathan Speek
       - Sean Connery
       - Lucas Henderson
+      - Riley Jones
 
 Features:
 
