@@ -65,6 +65,7 @@ group :development, :test do
   gem 'factory_girl_rails'
   gem 'capybara'
   gem 'faker'
+  gem 'bcrypt'
   gem 'sqlite3'
   gem 'shoulda-matchers'
   gem 'quiet_assets'
