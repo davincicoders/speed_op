@@ -6,6 +6,8 @@ Team Members:
 
       - Sergey Skumatov
       - Jonathan Speek
+      - Sean Connery
+      - Lucas Henderson
 
 Features:
 
