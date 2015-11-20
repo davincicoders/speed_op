@@ -10,8 +10,6 @@ class SitesController < ApplicationController
   # GET /sites/1
   # GET /sites/1.json
   def show
-    @mobile = Pagespeed.new(@site, true)
-    @desktop = Pagespeed.new(@site)
   end
 
   # GET /sites/new
@@ -30,7 +28,7 @@ class SitesController < ApplicationController
 
     respond_to do |format|
       if @site.save
-        format.html { redirect_to @site, notice: "#{@site.name} was successfully added." }
+        format.html { redirect_to @site, notice: 'Site was successfully created.' }
         format.json { render :show, status: :created, location: @site }
       else
         format.html { render :new }
@@ -44,7 +42,7 @@ class SitesController < ApplicationController
   def update
     respond_to do |format|
       if @site.update(site_params)
-        format.html { redirect_to @site, notice: "#{@site.name} was successfully updated." }
+        format.html { redirect_to @site, notice: 'Site was successfully updated.' }
         format.json { render :show, status: :ok, location: @site }
       else
         format.html { render :edit }
@@ -58,7 +56,7 @@ class SitesController < ApplicationController
   def destroy
     @site.destroy
     respond_to do |format|
-      format.html { redirect_to sites_url, notice: "#{@site.name} was successfully deleted." }
+      format.html { redirect_to sites_url, notice: 'Site was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -71,6 +69,6 @@ class SitesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def site_params
-      params.require(:site).permit(:url, :name)
+      params.require(:site).permit(:url)
     end
 end
