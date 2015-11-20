@@ -2,6 +2,10 @@ source 'https://rubygems.org'
 
 ruby '2.2.3'
 
+# gem 'lazy_high_charts'
+# gem 'highcharts-rails'
+# gem 'will_paginate'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.4'
 
