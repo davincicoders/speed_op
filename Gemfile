@@ -19,6 +19,9 @@ gem 'resque', require: 'resque/server'
 # gem 'highcharts-rails'
 # gem 'will_paginate'
 
+gem 'omniauth-github'
+
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.4'
 
@@ -54,7 +57,7 @@ gem 'bcrypt', '~> 3.1.7'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'dotenv-rails'
+  gem 'bcrypt'
   gem 'byebug'
   gem 'rspec-rails'
   gem 'guard-rspec', require: false
@@ -62,6 +65,7 @@ group :development, :test do
   gem 'factory_girl_rails'
   gem 'capybara'
   gem 'faker'
+  gem 'sqlite3'
   gem 'shoulda-matchers'
   gem 'quiet_assets'
   gem 'launchy'
