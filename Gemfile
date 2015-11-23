@@ -19,6 +19,9 @@ gem 'mail_form'
 gem 'simple_form'
 gem 'whenever', :require => false
 
+gem 'omniauth-github'
+
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.4'
 
@@ -55,7 +58,7 @@ gem 'bcrypt', '~> 3.1.7'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'dotenv-rails'
+  gem 'bcrypt'
   gem 'byebug'
   gem 'rspec-rails'
   gem 'guard-rspec', require: false
