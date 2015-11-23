@@ -18,6 +18,9 @@ gem 'lunchy'
 # gem 'highcharts-rails'
 # gem 'will_paginate'
 
+gem 'omniauth-github'
+
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.4'
 
@@ -62,7 +65,6 @@ group :development, :test do
   gem 'factory_girl_rails'
   gem 'capybara'
   gem 'faker'
-  gem 'bcrypt'
   gem 'sqlite3'
   gem 'shoulda-matchers'
   gem 'quiet_assets'
