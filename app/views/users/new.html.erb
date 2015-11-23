@@ -1,0 +1,21 @@
+<% @title="- Signup" %>
+<div class="jumbotron">
+  <div class="row">
+    <% unless @user.omniauth? %>
+      <div class='col-xs-4 center-block'>
+        <h3><%= link_to button_tag('Sign up via GitHub', class: 'btn-auth btn-github'), '/auth/github' %></h3>
+        <%= image_tag('octocat.png', class: 'img-reponsive') %>
+      </div>
+      <div class='col-xs-6 col-xs-offset-2'>
+        <h1>Signup</h1>
+    <% else %>
+      <div class='col-xs-10 col-xs-offset-2 center-block'>
+        <h1>Verify Details</h1>
+    <% end %>
+
+    <%= render 'users/form' %>
+    </div>
+    </div>
+  </div>
+</div>
+

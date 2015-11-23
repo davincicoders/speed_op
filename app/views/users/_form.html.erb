@@ -1,0 +1,27 @@
+<%= form_for(@user) do |form| %>
+  <p>
+    <%= form.label :first_name, 'First Name' %>
+    <%= form.text_field :first_name %>
+  </p>
+  <p>
+    <%= form.label :last_name, 'Last Name' %>
+    <%= form.text_field :last_name %>
+  </p>
+  <p>
+    <%= form.label :email %>
+    <%= form.text_field :email %>
+  </p>
+  <% if @user.omniauth? %>
+    <%= form.hidden_field :omniauth %>
+  <% else %>
+    <p>
+      <%= form.label :password %>
+      <%= form.password_field :password %>
+    </p>
+    <p>
+      <%= form.label :password_confirmation, 'Password Confirmation' %>
+      <%= form.password_field :password_confirmation %>
+    </p>
+  <% end %>
+  <%= form.submit 'Signup' %>
+<% end %>
