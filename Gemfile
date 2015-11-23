@@ -1,10 +1,11 @@
 source 'https://rubygems.org'
 
-ruby '2.2.3'
-
 # gem 'lazy_high_charts'
 # gem 'highcharts-rails'
 # gem 'will_paginate'
+
+gem 'omniauth-github'
+
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.4'
@@ -42,6 +43,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
+  gem 'bcrypt'
   gem 'byebug'
   gem 'rspec-rails'
   gem 'guard-rspec', require: false
@@ -49,7 +51,6 @@ group :development, :test do
   gem 'factory_girl_rails'
   gem 'capybara'
   gem 'faker'
-  gem 'bcrypt'
   gem 'sqlite3'
   gem 'shoulda-matchers'
   gem 'quiet_assets'

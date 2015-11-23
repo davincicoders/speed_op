@@ -1,0 +1,28 @@
+<% @title="- Login" %>
+
+<div class="jumbotron">
+  <div class="row">
+    <div class="col-xs-6 center-block">
+      <%= image_tag('octocat.png', class: 'img-responsive') %>
+      <%= link_to button_tag('Signin via Github', class: 'btn-auth btn-github'), '/auth/github' %>
+    </div>
+
+    <div class="col-xs-4 col-xs-offset-2">
+      <h1>Login</h1>
+      <%= form_tag login_path do %>
+        <p>
+          <%= label_tag :email %>
+          <%= text_field_tag :email %>
+        </p>
+
+        <p>
+          <%= label_tag :password %>
+          <%= password_field_tag :password %>
+        </p>
+
+        <p class="button"><%= submit_tag 'Login' %></p>
+      <% end %>
+    </div>
+  </div>
+</div>
+
