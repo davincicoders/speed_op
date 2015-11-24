@@ -1,4 +1,17 @@
 Rails.application.routes.draw do
+  resources :sites
+
+  root "sites#index"
+
+  get '/auth/:provider/callback', to: 'sessions#oauth'
+  get 'login', to: 'sessions#login'
+  post 'login', to: 'sessions#create'
+  delete '/logout', to: 'sessions#destroy'
+
+  resources :users,
+    only: [:new, :create],
+    path_names: { new: "signup" }
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
