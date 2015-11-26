@@ -5,7 +5,8 @@ source 'https://rubygems.org'
 # gem 'will_paginate'
 
 gem 'omniauth-github'
-
+gem 'google-api-client', '0.9.pre3'
+gem 'cancancan'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.4'
