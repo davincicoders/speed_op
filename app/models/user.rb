@@ -23,3 +23,4 @@ class User < ActiveRecord::Base
     create(name: info['name'])
   end
 end
+
