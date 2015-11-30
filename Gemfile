@@ -5,8 +5,11 @@ source 'https://rubygems.org'
 # gem 'will_paginate'
 
 gem 'omniauth-github'
+gem 'omniauth', '~> 1.2.2'
+gem 'omniauth-google-oauth2'
 gem 'google-api-client', '0.9.pre3'
 gem 'cancancan'
+gem 'json'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.4'
@@ -55,6 +58,7 @@ group :development, :test do
   gem 'shoulda-matchers'
   gem 'quiet_assets'
   gem 'launchy'
+  gem 'dotenv-rails'
 end
 
 group :development do
