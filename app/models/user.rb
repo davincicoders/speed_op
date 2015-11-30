@@ -15,4 +15,10 @@ class User < ActiveRecord::Base
 
   validates_length_of :password, minimum: 8
 
+  has_many :identities
+
+  def self.create_with_omniauth(info)
+    create(name: info['name'])
+  end
 end
+

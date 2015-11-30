@@ -2,3 +2,7 @@
   <h1>Sessions#create</h1>
 </div>
 <p>Find me in app/views/sessions/create.html.erb</p>
+<% @auth.each do |key, value| %>
+  <h1><%= key %> </h1>
+  <p><%= value %> </p>
+<% end %>
