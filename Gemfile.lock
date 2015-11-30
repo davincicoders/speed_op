@@ -323,7 +323,6 @@ DEPENDENCIES
   jquery-rails
   json
   launchy
-  lunchy
   omniauth (~> 1.2.2)
   omniauth-facebook
   omniauth-github
