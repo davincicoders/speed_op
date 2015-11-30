@@ -3,8 +3,14 @@
   <div class="row">
     <% unless @user.omniauth? %>
       <div class='col-xs-4 center-block'>
-        <h3><%= link_to button_tag('Sign up via GitHub', class: 'btn-auth btn-github'), '/auth/github' %></h3>
+        <h4><%= link_to "Authenticate with Google!", '/auth/google_oauth2' %>
+        <%= link_to "Authenticate with Twitter!", '/auth/twitter' %>
+          <%= link_to "Authenticate with LinkedIn!", '/auth/linkedin' %>
+          <%= link_to "Authenticate with Facebook!", '/auth/facebook' %>
+          <%= link_to button_tag('Sign up via GitHub', class: 'btn-auth btn-github'), '/auth/github' %></h4>
         <%= image_tag('octocat.png', class: 'img-reponsive') %>
+
+
       </div>
       <div class='col-xs-6 col-xs-offset-2'>
         <h1>Signup</h1>

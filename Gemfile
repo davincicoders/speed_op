@@ -5,11 +5,14 @@ source 'https://rubygems.org'
 # gem 'will_paginate'
 
 gem 'omniauth-github'
-gem 'omniauth', '~> 1.2.2'
+gem 'omniauth-twitter'
+gem 'omniauth-facebook'
+gem 'omniauth-linkedin'
 gem 'omniauth-google-oauth2'
 gem 'google-api-client', '0.9.pre3'
 gem 'cancancan'
 gem 'json'
+gem 'omniauth', '~> 1.2.2'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.4'
@@ -47,6 +50,7 @@ gem 'bcrypt', '~> 3.1.7'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
+  gem 'dotenv-rails'
   gem 'byebug'
   gem 'rspec-rails'
   gem 'guard-rspec', require: false
@@ -58,7 +62,6 @@ group :development, :test do
   gem 'shoulda-matchers'
   gem 'quiet_assets'
   gem 'launchy'
-  gem 'dotenv-rails'
 end
 
 group :development do
