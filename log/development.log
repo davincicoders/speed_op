@@ -2476,3 +2476,515 @@ Processing by SitesController#index as HTML
   [1m[36mSite Load (0.6ms)[0m  [1mSELECT "sites".* FROM "sites"[0m
   Rendered sites/index.html.erb within layouts/application (3.9ms)
 Completed 200 OK in 205ms (Views: 203.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for ::1 at 2015-11-30 03:12:31 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by SitesController#index as HTML
+  [1m[35mSite Load (3.9ms)[0m  SELECT "sites".* FROM "sites"
+  Rendered sites/index.html.erb within layouts/application (11.9ms)
+Completed 200 OK in 4193ms (Views: 4187.3ms | ActiveRecord: 4.2ms)
+
+
+Started GET "/" for ::1 at 2015-11-30 03:12:36 -0700
+Processing by SitesController#index as HTML
+  [1m[36mSite Load (0.2ms)[0m  [1mSELECT "sites".* FROM "sites"[0m
+  Rendered sites/index.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 137ms (Views: 136.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/sites" for ::1 at 2015-11-30 03:12:43 -0700
+Processing by SitesController#index as HTML
+  [1m[35mSite Load (0.2ms)[0m  SELECT "sites".* FROM "sites"
+  Rendered sites/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 131ms (Views: 130.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/signup" for ::1 at 2015-11-30 03:12:50 -0700
+Processing by UsersController#new as HTML
+  Rendered users/_form.html.erb (471.6ms)
+  Rendered users/new.html.erb within layouts/application (490.1ms)
+Completed 200 OK in 606ms (Views: 596.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/login" for ::1 at 2015-11-30 03:12:56 -0700
+Processing by SessionsController#login as HTML
+  Rendered sessions/login.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 101ms (Views: 100.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/signup" for ::1 at 2015-11-30 03:13:00 -0700
+Processing by UsersController#new as HTML
+  Rendered users/_form.html.erb (2.0ms)
+  Rendered users/new.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 112ms (Views: 111.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/github" for ::1 at 2015-11-30 03:13:01 -0700
+
+
+Started GET "/sites/new" for ::1 at 2015-11-30 03:14:01 -0700
+Processing by SitesController#new as HTML
+  Rendered sites/_form.html.erb (2.7ms)
+  Rendered sites/new.html.erb within layouts/application (5.1ms)
+Completed 200 OK in 136ms (Views: 135.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sites" for ::1 at 2015-11-30 03:14:13 -0700
+Processing by SitesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"nzTFeDrTL/QLMmtAWR6MoLev4RY2gpwEvJ42I53LJ7a/ndM34XQJT1p24I3fSFLVE1cfflN3E3gqRF40fU/ljQ==", "site"=>{"url"=>"www.theogenmusic.com"}, "commit"=>"Create Site"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "sites" ("url", "created_at", "updated_at") VALUES (?, ?, ?)  [["url", "www.theogenmusic.com"], ["created_at", "2015-11-30 10:14:13.913769"], ["updated_at", "2015-11-30 10:14:13.913769"]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/sites/4
+Completed 302 Found in 9ms (ActiveRecord: 1.5ms)
+
+
+Started GET "/sites/4" for ::1 at 2015-11-30 03:14:13 -0700
+Processing by SitesController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mSite Load (0.2ms)[0m  SELECT  "sites".* FROM "sites" WHERE "sites"."id" = ? LIMIT 1  [["id", 4]]
+  Rendered sites/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 132ms (Views: 122.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/sites" for ::1 at 2015-11-30 03:14:18 -0700
+Processing by SitesController#index as HTML
+  [1m[36mSite Load (0.2ms)[0m  [1mSELECT "sites".* FROM "sites"[0m
+  Rendered sites/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 119ms (Views: 118.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/sites" for ::1 at 2015-11-30 03:21:51 -0700
+Processing by SitesController#index as HTML
+  [1m[35mSite Load (0.3ms)[0m  SELECT "sites".* FROM "sites"
+  Rendered sites/index.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 150ms (Views: 149.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/sites" for ::1 at 2015-11-30 03:24:49 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by SitesController#index as HTML
+  [1m[35mSite Load (0.4ms)[0m  SELECT "sites".* FROM "sites"
+  Rendered sites/index.html.erb within layouts/application (10.7ms)
+Completed 200 OK in 2630ms (Views: 2626.8ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/sites" for ::1 at 2015-11-30 03:24:54 -0700
+Processing by SitesController#index as HTML
+  [1m[36mSite Load (0.2ms)[0m  [1mSELECT "sites".* FROM "sites"[0m
+  Rendered sites/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 131ms (Views: 130.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/sites" for ::1 at 2015-11-30 03:28:00 -0700
+Processing by SitesController#index as HTML
+  [1m[35mSite Load (0.2ms)[0m  SELECT "sites".* FROM "sites"
+  Rendered sites/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 141ms (Views: 140.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/sites" for ::1 at 2015-11-30 03:33:10 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by SitesController#index as HTML
+  [1m[35mSite Load (0.2ms)[0m  SELECT "sites".* FROM "sites"
+  Rendered sites/index.html.erb within layouts/application (8.9ms)
+Completed 500 Internal Server Error in 2167ms (ActiveRecord: 0.4ms)
+
+ActionView::Template::Error (wrong number of arguments (9 for 1)):
+    15:   <![endif]-->
+    16: 
+    17:   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    18:   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    19:   <%= csrf_meta_tags %>
+    20: </head>
+    21: <body>
+  app/assets/javascripts/application.js:19
+  app/views/layouts/application.html.erb:18:in `_app_views_layouts_application_html_erb___626615332354115536_70311729674320'
+
+
+  Rendered /Users/Apple/.rvm/gems/ruby-2.2.3@global/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (11.7ms)
+  Rendered /Users/Apple/.rvm/gems/ruby-2.2.3@global/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.3ms)
+  Rendered /Users/Apple/.rvm/gems/ruby-2.2.3@global/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (11.1ms)
+  Rendered /Users/Apple/.rvm/gems/ruby-2.2.3@global/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (95.7ms)
+  Rendered /Users/Apple/.rvm/gems/ruby-2.2.3@speed_op/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /Users/Apple/.rvm/gems/ruby-2.2.3@speed_op/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/Apple/.rvm/gems/ruby-2.2.3@speed_op/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/Apple/.rvm/gems/ruby-2.2.3@speed_op/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/Apple/.rvm/gems/ruby-2.2.3@speed_op/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (58.6ms)
+  Rendered /Users/Apple/.rvm/gems/ruby-2.2.3@speed_op/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/Apple/.rvm/gems/ruby-2.2.3@speed_op/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/Apple/.rvm/gems/ruby-2.2.3@speed_op/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (133.8ms)
+
+
+Started GET "/sites" for ::1 at 2015-11-30 03:33:46 -0700
+Processing by SitesController#index as HTML
+  [1m[36mSite Load (0.2ms)[0m  [1mSELECT "sites".* FROM "sites"[0m
+  Rendered sites/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 741ms (Views: 740.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/sites" for ::1 at 2015-11-30 03:36:29 -0700
+Processing by SitesController#index as HTML
+  [1m[35mSite Load (0.2ms)[0m  SELECT "sites".* FROM "sites"
+  Rendered sites/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 133ms (Views: 133.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/sites" for ::1 at 2015-11-30 03:38:36 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by SitesController#index as HTML
+  [1m[35mSite Load (0.2ms)[0m  SELECT "sites".* FROM "sites"
+  Rendered sites/index.html.erb within layouts/application (8.9ms)
+Completed 200 OK in 858ms (Views: 855.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/sites" for ::1 at 2015-11-30 03:40:20 -0700
+Processing by SitesController#index as HTML
+  [1m[36mSite Load (0.2ms)[0m  [1mSELECT "sites".* FROM "sites"[0m
+  Rendered sites/index.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 152ms (Views: 151.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/sites" for ::1 at 2015-11-30 03:40:23 -0700
+Processing by SitesController#index as HTML
+  [1m[35mSite Load (0.2ms)[0m  SELECT "sites".* FROM "sites"
+  Rendered sites/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 131ms (Views: 130.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/sites" for ::1 at 2015-11-30 03:40:23 -0700
+Processing by SitesController#index as HTML
+  [1m[36mSite Load (0.2ms)[0m  [1mSELECT "sites".* FROM "sites"[0m
+  Rendered sites/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 138ms (Views: 137.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/sites" for ::1 at 2015-11-30 03:40:24 -0700
+Processing by SitesController#index as HTML
+  [1m[35mSite Load (0.2ms)[0m  SELECT "sites".* FROM "sites"
+  Rendered sites/index.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 147ms (Views: 146.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/sites" for ::1 at 2015-11-30 03:40:58 -0700
+Processing by SitesController#index as HTML
+  [1m[36mSite Load (0.1ms)[0m  [1mSELECT "sites".* FROM "sites"[0m
+  Rendered sites/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 153ms (Views: 152.9ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/sites" for ::1 at 2015-11-30 03:40:59 -0700
+Processing by SitesController#index as HTML
+  [1m[35mSite Load (0.1ms)[0m  SELECT "sites".* FROM "sites"
+  Rendered sites/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 137ms (Views: 136.6ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/sites" for ::1 at 2015-11-30 03:44:27 -0700
+Processing by SitesController#index as HTML
+  [1m[36mSite Load (0.2ms)[0m  [1mSELECT "sites".* FROM "sites"[0m
+  Rendered sites/index.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 161ms (Views: 160.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/sites" for ::1 at 2015-11-30 03:55:17 -0700
+Processing by SitesController#index as HTML
+  [1m[35mSite Load (0.2ms)[0m  SELECT "sites".* FROM "sites"
+  Rendered sites/index.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 175ms (Views: 174.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/sites" for ::1 at 2015-11-30 03:55:18 -0700
+Processing by SitesController#index as HTML
+  [1m[36mSite Load (0.2ms)[0m  [1mSELECT "sites".* FROM "sites"[0m
+  Rendered sites/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 130ms (Views: 129.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/sites" for ::1 at 2015-11-30 03:57:10 -0700
+Processing by SitesController#index as HTML
+  [1m[35mSite Load (0.2ms)[0m  SELECT "sites".* FROM "sites"
+  Rendered sites/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 142ms (Views: 141.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/sites" for ::1 at 2015-11-30 03:57:58 -0700
+Processing by SitesController#index as HTML
+  [1m[36mSite Load (0.2ms)[0m  [1mSELECT "sites".* FROM "sites"[0m
+  Rendered sites/index.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 150ms (Views: 149.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/sites/1" for ::1 at 2015-11-30 16:18:20 -0700
+Processing by SitesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mSite Load (7.9ms)[0m  SELECT  "sites".* FROM "sites" WHERE "sites"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered sites/show.html.erb within layouts/application (13.3ms)
+Completed 200 OK in 401ms (Views: 254.9ms | ActiveRecord: 7.9ms)
+
+
+Started GET "/sites/1" for ::1 at 2015-11-30 16:20:28 -0700
+Processing by SitesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSite Load (0.4ms)[0m  [1mSELECT  "sites".* FROM "sites" WHERE "sites"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered sites/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 165ms (Views: 163.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/sites/1" for ::1 at 2015-11-30 16:21:18 -0700
+Processing by SitesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mSite Load (0.1ms)[0m  SELECT  "sites".* FROM "sites" WHERE "sites"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered sites/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 142ms (Views: 141.6ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/sites/1" for ::1 at 2015-11-30 16:21:39 -0700
+Processing by SitesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSite Load (0.1ms)[0m  [1mSELECT  "sites".* FROM "sites" WHERE "sites"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered sites/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 141ms (Views: 140.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/sites/1" for ::1 at 2015-11-30 16:22:41 -0700
+Processing by SitesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mSite Load (0.1ms)[0m  SELECT  "sites".* FROM "sites" WHERE "sites"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered sites/show.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 155ms (Views: 154.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/sites/1" for ::1 at 2015-11-30 16:25:39 -0700
+Processing by SitesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSite Load (0.1ms)[0m  [1mSELECT  "sites".* FROM "sites" WHERE "sites"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered sites/show.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 139ms (Views: 137.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/sites" for ::1 at 2015-11-30 16:25:55 -0700
+Processing by SitesController#index as HTML
+  [1m[35mSite Load (0.2ms)[0m  SELECT "sites".* FROM "sites"
+  Rendered sites/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 137ms (Views: 137.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/sites/1" for ::1 at 2015-11-30 16:28:42 -0700
+Processing by SitesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSite Load (0.1ms)[0m  [1mSELECT  "sites".* FROM "sites" WHERE "sites"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered sites/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 162ms (Views: 161.6ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/sites/1" for ::1 at 2015-11-30 16:35:35 -0700
+Processing by SitesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mSite Load (0.1ms)[0m  SELECT  "sites".* FROM "sites" WHERE "sites"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered sites/show.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 176ms (Views: 175.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/sites/1" for ::1 at 2015-11-30 16:36:28 -0700
+Processing by SitesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSite Load (0.1ms)[0m  [1mSELECT  "sites".* FROM "sites" WHERE "sites"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered sites/show.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 147ms (Views: 146.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/sites/1" for ::1 at 2015-11-30 16:41:39 -0700
+Processing by SitesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mSite Load (0.1ms)[0m  SELECT  "sites".* FROM "sites" WHERE "sites"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered sites/show.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 153ms (Views: 150.9ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/sites/1" for ::1 at 2015-11-30 16:43:20 -0700
+Processing by SitesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSite Load (0.1ms)[0m  [1mSELECT  "sites".* FROM "sites" WHERE "sites"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered sites/show.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 152ms (Views: 151.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/sites/1" for ::1 at 2015-11-30 16:46:16 -0700
+Processing by SitesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mSite Load (0.1ms)[0m  SELECT  "sites".* FROM "sites" WHERE "sites"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered sites/show.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 157ms (Views: 156.6ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/sites/1" for ::1 at 2015-11-30 16:47:36 -0700
+Processing by SitesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSite Load (0.1ms)[0m  [1mSELECT  "sites".* FROM "sites" WHERE "sites"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered sites/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 161ms (Views: 160.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/sites/1" for ::1 at 2015-11-30 16:48:55 -0700
+Processing by SitesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mSite Load (0.1ms)[0m  SELECT  "sites".* FROM "sites" WHERE "sites"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered sites/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 173ms (Views: 172.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/sites/1" for ::1 at 2015-11-30 16:50:19 -0700
+Processing by SitesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSite Load (0.1ms)[0m  [1mSELECT  "sites".* FROM "sites" WHERE "sites"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered sites/show.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 172ms (Views: 171.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/sites/1" for ::1 at 2015-11-30 16:50:21 -0700
+Processing by SitesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mSite Load (0.1ms)[0m  SELECT  "sites".* FROM "sites" WHERE "sites"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered sites/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 138ms (Views: 137.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/sites/1" for ::1 at 2015-11-30 16:50:22 -0700
+Processing by SitesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSite Load (0.1ms)[0m  [1mSELECT  "sites".* FROM "sites" WHERE "sites"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered sites/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 141ms (Views: 139.9ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/sites" for ::1 at 2015-11-30 16:50:29 -0700
+Processing by SitesController#index as HTML
+  [1m[35mSite Load (0.2ms)[0m  SELECT "sites".* FROM "sites"
+  Rendered sites/index.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 140ms (Views: 140.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/sites/1" for ::1 at 2015-11-30 16:50:34 -0700
+Processing by SitesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSite Load (0.1ms)[0m  [1mSELECT  "sites".* FROM "sites" WHERE "sites"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered sites/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 137ms (Views: 136.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/sites/1" for ::1 at 2015-11-30 16:50:58 -0700
+Processing by SitesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mSite Load (0.1ms)[0m  SELECT  "sites".* FROM "sites" WHERE "sites"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered sites/show.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 143ms (Views: 142.6ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/sites/1" for ::1 at 2015-11-30 16:51:17 -0700
+Processing by SitesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSite Load (0.1ms)[0m  [1mSELECT  "sites".* FROM "sites" WHERE "sites"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered sites/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 138ms (Views: 137.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/sites/1" for ::1 at 2015-11-30 17:01:40 -0700
+Processing by SitesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mSite Load (0.1ms)[0m  SELECT  "sites".* FROM "sites" WHERE "sites"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered sites/show.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 180ms (Views: 179.6ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/sites/1" for ::1 at 2015-11-30 17:02:35 -0700
+Processing by SitesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSite Load (0.1ms)[0m  [1mSELECT  "sites".* FROM "sites" WHERE "sites"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered sites/show.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 146ms (Views: 145.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/sites/1" for ::1 at 2015-11-30 17:02:58 -0700
+Processing by SitesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mSite Load (0.1ms)[0m  SELECT  "sites".* FROM "sites" WHERE "sites"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered sites/show.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 161ms (Views: 160.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/sites/1" for ::1 at 2015-11-30 17:04:29 -0700
+Processing by SitesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSite Load (0.1ms)[0m  [1mSELECT  "sites".* FROM "sites" WHERE "sites"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered sites/show.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 146ms (Views: 145.6ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/sites/1" for ::1 at 2015-11-30 17:05:35 -0700
+Processing by SitesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mSite Load (0.1ms)[0m  SELECT  "sites".* FROM "sites" WHERE "sites"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered sites/show.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 146ms (Views: 145.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/sites/1" for ::1 at 2015-11-30 17:06:09 -0700
+Processing by SitesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSite Load (0.1ms)[0m  [1mSELECT  "sites".* FROM "sites" WHERE "sites"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered sites/show.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 146ms (Views: 145.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/sites/1" for ::1 at 2015-11-30 17:07:14 -0700
+Processing by SitesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mSite Load (0.1ms)[0m  SELECT  "sites".* FROM "sites" WHERE "sites"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered sites/show.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 184ms (Views: 183.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/sites" for ::1 at 2015-11-30 17:07:51 -0700
+Processing by SitesController#index as HTML
+  [1m[36mSite Load (0.2ms)[0m  [1mSELECT "sites".* FROM "sites"[0m
+  Rendered sites/index.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 150ms (Views: 149.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/sites/1" for ::1 at 2015-11-30 17:16:30 -0700
+Processing by SitesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mSite Load (0.1ms)[0m  SELECT  "sites".* FROM "sites" WHERE "sites"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered sites/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 169ms (Views: 168.0ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/sites" for ::1 at 2015-11-30 17:16:40 -0700
+Processing by SitesController#index as HTML
+  [1m[36mSite Load (0.2ms)[0m  [1mSELECT "sites".* FROM "sites"[0m
+  Rendered sites/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 142ms (Views: 141.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/sites" for ::1 at 2015-11-30 17:17:10 -0700
+Processing by SitesController#index as HTML
+  [1m[35mSite Load (0.1ms)[0m  SELECT "sites".* FROM "sites"
+  Rendered sites/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 135ms (Views: 135.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/sites/1" for ::1 at 2015-11-30 18:12:33 -0700
+Processing by SitesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSite Load (0.2ms)[0m  [1mSELECT  "sites".* FROM "sites" WHERE "sites"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered sites/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 168ms (Views: 166.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/sites" for ::1 at 2015-11-30 18:39:28 -0700
+Processing by SitesController#index as HTML
+  [1m[35mSite Load (0.6ms)[0m  SELECT "sites".* FROM "sites"
+  Rendered sites/index.html.erb within layouts/application (11.1ms)
+Completed 200 OK in 331ms (Views: 328.3ms | ActiveRecord: 0.6ms)
