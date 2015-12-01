@@ -6,14 +6,25 @@
     xAxis: {type: "datetime"},
     yAxis: {title: {text: "(n/100)"}},
     series: [{
+      name: 'URL A',
       pointInterval: <%= 1.day * 1000 %>,
       pointStart: <%= 3.weeks.ago.to_i * 1000 %>,
       data: [20, 30, 40, 50, 90]
-    }]
+    },  {
+      name: 'URL B',
+      pointInterval: <%= 1.day * 1000 %>,
+      pointStart: <%= 3.weeks.ago.to_i * 1000 %>,
+      data: [05, 15, 30, 40, 100]
+    },  {
+      name: 'URL C',
+      pointInterval: <%= 1.day * 1000 %>,
+      pointStart: <%= 3.weeks.ago.to_i * 1000 %>,
+      data: [50, 36, 24, 12, 89]
+    }],
   });
 }); </script> 
 
-<div id="URLs" style="width:560px; height:300px;"></div>
+<div id="URLs" style="width:1000px; height:450px;"></div>
 
 <div class="page-header">
   <%= link_to new_site_path, class: 'btn btn-primary' do %>
