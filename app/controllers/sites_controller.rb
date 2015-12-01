@@ -10,6 +10,8 @@ class SitesController < ApplicationController
   # GET /sites/1
   # GET /sites/1.json
   def show
+    @mobile = Pagespeed.new(@site, true)
+    @desktop = Pagespeed.new(@site)
   end
 
   # GET /sites/new
