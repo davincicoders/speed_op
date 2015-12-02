@@ -3,6 +3,7 @@ require 'google/apis/pagespeedonline_v2'
 class Pagespeed
   attr_accessor :site, :mobile
   delegate :url, to: :site
+  # belongs_to :site
 
   def initialize(site, mobile = false)
     @site = site
