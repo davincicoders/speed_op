@@ -2,24 +2,32 @@
 <div class="jumbotron">
   <div class="row">
     <% unless @user.omniauth? %>
-      <div class='col-xs-4 center-block'>
-        <h4><%= link_to "Authenticate with Google!", '/auth/google_oauth2' %>
-        <%= link_to "Authenticate with Twitter!", '/auth/twitter' %>
-          <%= link_to "Authenticate with LinkedIn!", '/auth/linkedin' %>
-          <%= link_to "Authenticate with Facebook!", '/auth/facebook' %>
-          <%= link_to button_tag('Sign up via GitHub', class: 'btn-auth btn-github'), '/auth/github' %></h4>
-        <%= image_tag('octocat.png', class: 'img-reponsive') %>
-
-
-      </div>
-      <div class='col-xs-6 col-xs-offset-2'>
+      <div class='col-xs-6'>
         <h1>Signup</h1>
     <% else %>
-      <div class='col-xs-10 col-xs-offset-2 center-block'>
+      <div class='col-xs-10 center-block'>
         <h1>Verify Details</h1>
     <% end %>
 
     <%= render 'users/form' %>
+    <br>
+    <!-- DropUp Signup Menu -->
+    <div class="btn-group dropup">
+      <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Signup with an Account <span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu">
+        <li><%= link_to 'Signup with Google', '/auth/google_oauth2' %></li>
+        <li role="separator" class="divider"></li>
+        <li><%= link_to 'Signup with Twitter', '/auth/twitter' %></li>
+        <li role="separator" class="divider"></li>
+        <li><%= link_to 'Signup with LinkedIn', '/auth/linkedin' %></li>
+        <li role="separator" class="divider"></li>
+        <li><%= link_to 'Signup with Facebook', '/auth/facebook' %></li>
+        <li role="separator" class="divider"></li>
+        <li><%= link_to 'Signup with GitHub', '/auth/github' %></li>
+      </ul>
+    </div>
     </div>
     </div>
   </div>
