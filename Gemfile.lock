@@ -119,6 +119,8 @@ GEM
       guard-compat (~> 1.1)
       rspec (>= 2.99.0, < 4.0)
     hashie (3.4.3)
+    highcharts-rails (3.0.10)
+      railties (>= 3.1)
     hurley (0.2)
     i18n (0.7.0)
     jbuilder (2.3.2)
@@ -319,6 +321,7 @@ DEPENDENCIES
   google-api-client (= 0.9.pre3)
   guard-bundler
   guard-rspec
+  highcharts-rails (~> 3.0.0)
   jbuilder (~> 2.0)
   jquery-rails
   json

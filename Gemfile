@@ -1,7 +1,6 @@
 source 'https://rubygems.org'
 
-# gem 'lazy_high_charts'
-# gem 'highcharts-rails'
+gem "highcharts-rails", "~> 3.0.0"
 # gem 'will_paginate'
 
 gem 'omniauth-github'
