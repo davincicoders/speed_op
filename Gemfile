@@ -54,6 +54,12 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 
+gem 'mail_form'
+gem 'simple_form'
+
+gem "figaro"
+
+gem 'whenever', :require => false
 # Use Unicorn as the app server
 # gem 'unicorn'
 
