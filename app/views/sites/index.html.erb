@@ -10,19 +10,19 @@
   <table class="table table-striped table-bordered table-hover">
     <thead>
       <tr>
-            <th>URL</th>
-            <th></th>
-        <th></th>
-        <th></th>
+            <th>Website</th>
+            <th>More</th>
+        <th>Edit</th>
+        <th>Delete</th>
       </tr>
     </thead>
 
     <tbody>
       <%= content_tag_for(:tr, @sites) do |site| %>
             <td><%= site.url %></td>
-            <td><%= link_to 'Show', site %></td>
-        <td><%= link_to 'Edit', edit_site_path(site) %></td>
-        <td><%= link_to 'Destroy', site, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            <td><%= link_to '', site, class: 'btn btn-primary glyphicon glyphicon-search' %></td>
+        <td><%= link_to '', edit_site_path(site), class: 'btn btn-primary glyphicon glyphicon-edit' %></td>
+        <td><%= link_to '', site, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-primary glyphicon glyphicon-trash' %></td>
       <% end %>
     </tbody>
   </table>

@@ -2,10 +2,10 @@
 <div class="jumbotron">
   <div class="row">
     <% unless @user.omniauth? %>
-      <div class='col-xs-6'>
+      <div class='col-md-4'>
         <h1>Signup</h1>
     <% else %>
-      <div class='col-xs-10 center-block'>
+      <div class='col-md-4'>
         <h1>Verify Details</h1>
     <% end %>
 
@@ -28,6 +28,9 @@
         <li><%= link_to 'Signup with GitHub', '/auth/github' %></li>
       </ul>
     </div>
+    </div>
+    <div class='col-md-8'>
+      <%= image_tag("signup.jpg") %>
     </div>
     </div>
   </div>
