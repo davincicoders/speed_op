@@ -10,14 +10,22 @@
   <h1>Show site</h1>
 </div>
 
-<dl class="dl-horizontal">
-  <dt>Url:</dt>
-  <dd><%= @site.url %></dd>
-  <dt>Mobile Speed:</dt>
-  <dd><%= @mobile.speed %></dd>
-  <dt>Mobile Usablilty:</dt>
-  <dd><%= @mobile.usability %></dd>
-  <dt>Desktop Speed:</dt>
-  <dd><%= @desktop.speed %></dd>
+<div class="table-responsive">
+  <table class="table table-striped table-bordered table-hover">
+    <thead>
+    <tr>
+      <th>URL</th>
+      <th>Mobile Speed</th>
+      <th>Mobile Usability</th>
+      <th>Desktop Speed</th>
+    </tr>
+    </thead>
 
-</dl>
+    <tbody>
+      <td><%= @site.url %></td>
+      <td><%= @mobile.speed %></td>
+      <td><%= @mobile.usability %></td>
+      <td><%= @desktop.speed %></td>
+    </tbody>
+  </table>
+</div>
