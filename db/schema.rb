@@ -14,9 +14,8 @@
 ActiveRecord::Schema.define(version: 20151202040350) do
 
   create_table "identities", force: :cascade do |t|
-    t.string   "uid"
+    t.integer  "user_id"
     t.string   "provider"
-    t.string   "users"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
