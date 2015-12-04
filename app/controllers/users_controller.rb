@@ -8,7 +8,7 @@ class UsersController < ApplicationController
 
     if @user.save
       redirect_to root_path,
-        notice: "Welcome to Speed Op #{@user.first_name.titleize} "
+                  notice: "Welcome to Speed Op #{@user.first_name.titleize} "
     else
       render :new
     end
