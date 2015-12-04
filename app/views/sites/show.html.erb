@@ -1,3 +1,32 @@
+<script type="text/javascript" charset="utf-8">
+  $(function() {
+    new Highcharts.Chart({
+      chart: {renderTo: "URLs"},
+      title: {text: "Insight Scores"},
+      xAxis: {type: "datetime"},
+      yAxis: {title: {text: "(n/100)"}},
+      series: [{
+        name: 'Mobile Speed',
+        pointInterval: <%= 1.day * 1000 %>,
+        pointStart: <%= 3.weeks.ago.to_i * 1000 %>,
+        data: [10, 10, 10, 10, <%= @mobile.speed %>]
+      }, {
+        name: 'Mobile UX',
+        pointInterval: <%= 1.day * 1000 %>,
+        pointStart: <%= 3.weeks.ago.to_i * 1000 %>,
+        data: [10, 10, 10, 10, <%= @mobile.usability %>]
+      }, {
+        name: 'Desktop Speed',
+        pointInterval: <%= 1.day * 1000 %>,
+        pointStart: <%= 3.weeks.ago.to_i * 1000 %>,
+        data: [10, 10, 10, 10, <%= @desktop.speed %>]
+      }],
+    });
+  }); </script>   
+
+<div id="URLs" style="width:560px; height:300px;"></div>
+
+
 <div class="page-header">
   <%= link_to sites_path, class: 'btn btn-default' do %>
     <span class="glyphicon glyphicon-list-alt"></span>
