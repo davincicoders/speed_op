@@ -1,15 +1,15 @@
 SpeedOp::Application.routes.draw do
-   match 'auth/:provider/callback', to: 'sessions#oauth', via: [:get,
-       :post]
-    match '/logout', to: 'sessions#destroy', via: [:get, :post]
+  match 'auth/:provider/callback', to: 'sessions#oauth', via: [:get,
+                                                               :post]
+  match '/logout', to: 'sessions#destroy', via: [:get, :post]
 
 
   resources :sites
 #
-   root "sites#index"
+  root "sites#index"
 #
 #  # get '/auth/:provider/callback', to: 'sites#index'
-   get 'login', to: 'sessions#login'
+  get 'login', to: 'sessions#login'
 #   post 'login', to: 'sessions#create'
 #   # delete '/logout', to: 'sessions#destroy'
 #
@@ -19,10 +19,14 @@ SpeedOp::Application.routes.draw do
 #
 #
   resources :users,
-    only: [:new, :create],
-     path_names: {new: "signup"}
+            only: [:new, :create],
+            path_names: {new: "signup"}
 #
+
+  match '/contacts',     to: 'contacts#new',             via: 'get'
+  resources "contacts", only: [:new, :create]
 #   # root to: 'sessions#new'
 #   resources :sessions, only: :index
 #  # get "/auth/:provider/callback" => 'sessions#create'
- end
+end
+
