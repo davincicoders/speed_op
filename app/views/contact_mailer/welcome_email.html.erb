@@ -3,19 +3,22 @@
 <head>
   <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
 </head>
-  <body>
-  <h2>Hello, <%= @contact.name %></h2>
-  <p>
-    Thanks for a responce!
-  </p>
-  <p>
-    Message:
-  </p>
-  <p>
-    <%= @contact.message %>
-  </p>
-  <p>
-    To login to the site, just follow this link: <%= @url %>.
-  </p>
-  </body>
+<body>
+<h1>Hey, </h1>
+<p>
+  Welcome to our site!
+</p>
+<p>
+  Thanks for a responce, <%= @contact.name %>!
+</p>
+<p>
+  Original message
+</p>
+<p>
+  <%= @contact.message %>
+</p>
+<p>
+  To login to the site, just follow this link: <%= @url %>.
+</p>
+</body>
 </html>
