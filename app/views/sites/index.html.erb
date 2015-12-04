@@ -36,7 +36,7 @@
       <th>Mobile Speed</th>
       <th>Show</th>
       <th>Edit</th>
-      <th>Dest</th>
+      <th>Delete</th>
     </tr>
     </thead>
 
@@ -46,7 +46,7 @@
       <td><%= '## n/100 (from API)' %></td>
       <td><%= link_to 'Show', site %></td>
       <td><%= link_to 'Edit', edit_site_path(site) %></td>
-      <td><%= link_to 'Destroy', site, method: :delete, data: {confirm: 'Are you sure?'} %></td>
+      <td><%= link_to 'Delete', site, method: :delete, data: {confirm: 'Are you sure?'} %></td>
     <% end %>
     </tbody>
   </table>
