@@ -16,7 +16,7 @@ gem 'lunchy'
 gem 'resque', require: 'resque/server'
 
 # gem 'lazy_high_charts'
-# gem 'highcharts-rails'
+gem 'highcharts-rails'
 # gem 'will_paginate'
 
 gem 'omniauth-github'
@@ -36,8 +36,8 @@ gem 'omniauth', '~> 1.2.2'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.4'
 
-require 'rubygems'
-require 'rest-client'
+# require 'rubygems'
+# require 'rest-client'
 
 group :production do
   gem 'rails_12factor'
@@ -66,7 +66,7 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'mail_form'
 gem 'simple_form'
 
-gem "figaro"
+# gem "figaro"
 
 gem 'whenever', :require => false
 # Use Unicorn as the app server
