@@ -1,5 +1,6 @@
 /log
 /tmp
+/speed_op/log/*.log
 
 *.rbc
 capybara-*.html
