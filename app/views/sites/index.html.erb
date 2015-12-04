@@ -1,4 +1,24 @@
+<script type="text/javascript" charset="utf-8">
+  $(function() {
+    new Highcharts.Chart({
+      chart: {renderTo: "URLs"},
+      title: {text: "Mobile Speed Score"},
+      xAxis: {type: "datetime"},
+      yAxis: {title: {text: "(n/100)"}},
+      series:
+        [{
+          name: 'URLs' ,
+          pointInterval: <%= 1.day * 1000 %>,
+          pointStart: <%= 3.weeks.ago.to_i * 1000 %>,
+          data: <%= 21.times.map{ Random.rand(100) } %>
+        }],
+    });
+  });
+</script>
 
+<div id="URLs" align:center; ></div>
+
+<hr>
 
 <div class="page-header">
   <%= link_to new_site_path, class: 'btn btn-primary' do %>
@@ -31,24 +51,3 @@
     </tbody>
   </table>
 </div>
-
-<!--&lt;!&ndash;<script type="text/javascript" charset="utf-8">&ndash;&gt;-->
-<!--//  $(function() {-->
-<!--//    new Highcharts.Chart({-->
-<!--//      chart: {renderTo: "URLs"},-->
-<!--//      title: {text: "Mobile Speed Score"},-->
-<!--//      xAxis: {type: "datetime"},-->
-<!--//      yAxis: {title: {text: "(n/100)"}},-->
-<!--//      series: [{-->
-<!--//        name: 'URL' ,-->
-<!--//        pointInterval: <%= 1.day * 1000 %>,-->
-<!--//        pointStart: <%= 3.weeks.ago.to_i * 1000 %>,-->
-        data: <%= 10.times.map{ Random.rand(100) } %>
-<!--//      }],-->
-<!--//    });-->
-  <!--}); </script>
-
-
--->
-
-//<!--<div id="URLs" style="width:1000px; height:450px;"></div>-->
