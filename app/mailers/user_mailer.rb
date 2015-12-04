@@ -1,5 +1,5 @@
 class UserMailer < ActionMailer::Base
-  default from: 'speedopdavinci@gmail.com'
+  default from: 'info@speedop.com'
 
   def digest_email_update(user)
     @user = user
@@ -8,8 +8,8 @@ class UserMailer < ActionMailer::Base
     attachments.inline['666.txt'] = File.read('app/assets/files/666.txt')
     attachments.inline['octocat.png'] = File.read('app/assets/images/octocat.png')
     mail(to: @user.email,
-         bcc: 'speedopdavinci@gmail.com',
-         subject: 'test welcome email')
+         bcc: 'info@speedop.com',
+         subject: 'testing automated email service')
   end
 end
 
