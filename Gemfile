@@ -12,12 +12,12 @@ gem 'google-api-client', '0.9.pre3'
 gem 'cancancan'
 gem 'json'
 gem 'omniauth', '~> 1.2.2'
+gem 'lunchy'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.4'
 
 group :production do
-  gem 'pg'
   gem 'rails_12factor'
 end
 
@@ -57,7 +57,6 @@ group :development, :test do
   gem 'factory_girl_rails'
   gem 'capybara'
   gem 'faker'
-  gem 'sqlite3'
   gem 'shoulda-matchers'
   gem 'quiet_assets'
   gem 'launchy'
@@ -69,4 +68,8 @@ group :development do
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
+end
+
+group :development, :test, :production do
+  gem 'pg'
 end
