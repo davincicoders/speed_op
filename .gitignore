@@ -1,7 +1,5 @@
-/log
+
 /tmp
-speed_op/log/development.log
-echo log >> .gitignore
 
 *.rbc
 capybara-*.html
