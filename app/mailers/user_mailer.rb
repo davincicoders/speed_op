@@ -8,7 +8,8 @@ class UserMailer < ActionMailer::Base
     attachments.inline['666.txt'] = File.read('app/assets/files/666.txt')
     attachments.inline['octocat.png'] = File.read('app/assets/images/octocat.png')
     mail(to: @user.email,
-         bcc: 'info@speedop.com',
+         # bcc: 'info@speedop.com',
+         bcc: 'sergeyskumatov@aol.com',
          subject: 'testing automated email service')
   end
 end
