@@ -7,8 +7,8 @@ class ContactsController < ApplicationController
     @contact = Contact.new(params[:contact])
     @contact.request = request
     if @contact.deliver
-    # if @contact.save
-    #   redirect_to(@user, :notice => 'User created')
+      # if @contact.save
+      #   redirect_to(@user, :notice => 'User created')
       # flash[:notice] = 'Thank you for your message. We will contact you soon!'
       redirect_to root_path, notice:'Thank you for your message. We will contact you soon!'
 
