@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20151202040350) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "identities", force: :cascade do |t|
     t.integer  "user_id"
     t.string   "provider"
@@ -27,7 +30,7 @@ ActiveRecord::Schema.define(version: 20151202040350) do
     t.integer  "user_id"
   end
 
-  add_index "sites", ["user_id"], name: "index_sites_on_user_id"
+  add_index "sites", ["user_id"], name: "index_sites_on_user_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "first_name"
@@ -39,4 +42,5 @@ ActiveRecord::Schema.define(version: 20151202040350) do
     t.boolean  "omniauth"
   end
 
+  add_foreign_key "sites", "users"
 end
