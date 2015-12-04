@@ -2,7 +2,8 @@
 set :output, "/log/cron.log"
 
 every 55.minutes do # Many shortcuts available: :hour, :day, :month, :year, :reboot
-  rake 'send_digest_email', :environment => :development, :output => {:error => 'log/error.log', :standard => 'log/cron.log'}
+  # rake 'send_digest_email', :environment => :development, :output => {:error => 'log/error.log', :standard => 'log/cron.log'}
+  rake 'send_digest_email', :output => {:error => 'log/error.log', :standard => 'log/cron.log'}
 
   # rake 'files'
 
