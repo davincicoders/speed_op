@@ -15,6 +15,11 @@ require "sprockets/railtie"
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
+  # GMAIL_USERNAME: "speedopdavinci@gmail.com"
+  # GMAIL_PASSWORD: "Speedop_2015"
+ENV['GMAIL_USERNAME'] = "speedopdavinci@gmail.com"
+ENV['GMAIL_PASSWORD'] = "Speedop_2015"
+
 module SpeedOp
   class Application < Rails::Application
     # Settings in config/environments/* take precedence over those specified here.
