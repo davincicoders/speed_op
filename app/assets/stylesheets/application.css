@@ -21,3 +21,8 @@ td.up {
 td.down {
   background-color: #b25241;
 }
+.changeFont
+{
+  font-family: 'Droid Sans', sans-serif !important;
+  font-size: 200% !important;
+}
