@@ -1,6 +1,5 @@
 SpeedOp::Application.routes.draw do
-  match 'auth/:provider/callback', to: 'sessions#oauth', via: [:get,
-                                                               :post]
+  match 'auth/:provider/callback', to: 'sessions#oauth', via: [:get, :post]
   match '/logout', to: 'sessions#destroy', via: [:get, :post]
 
 
