@@ -35,6 +35,7 @@
   <table class="table table-striped table-bordered table-hover">
     <thead>
     <tr>
+      <th>Name</th>
       <th>URL</th>
       <th>Mobile Speed</th>
       <th>Show</th>
@@ -45,6 +46,7 @@
 
     <tbody>
     <%= content_tag_for(:tr, @sites) do |site| %>
+      <td><%= site.name %></td>
       <td><%= site.url %></td>
       <td><%= '## n/100 (from API)' %></td>
       <td><%= link_to '', site, class: 'btn btn-primary glyphicon glyphicon-search' %></td>
