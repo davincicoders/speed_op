@@ -11,28 +11,16 @@ gem 'omniauth-google-oauth2'
 gem 'google-api-client', '0.9.pre3'
 gem 'cancancan'
 gem 'json'
-gem 'lunchy'
-gem 'resque', require: 'resque/server'
+gem 'omniauth', '~> 1.2.2'
 
-# gem 'lazy_high_charts'
-# gem 'highcharts-rails'
-# gem 'will_paginate'
-
-gem 'omniauth-github'
-
-
-# gem 'lazy_high_charts'
-# gem 'highcharts-rails'
-# gem 'will_paginate'
+gem 'mail_form'
+gem 'simple_form'
+gem 'whenever', :require => false
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.4'
 
-require 'rubygems'
-require 'rest-client'
-
 group :production do
-  gem 'pg'
   gem 'rails_12factor'
 end
 
@@ -56,12 +44,6 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 
-gem 'mail_form'
-gem 'simple_form'
-
-gem "figaro"
-
-gem 'whenever', :require => false
 # Use Unicorn as the app server
 # gem 'unicorn'
 
@@ -70,7 +52,7 @@ gem 'whenever', :require => false
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'bcrypt'
+  gem 'dotenv-rails'
   gem 'byebug'
   gem 'rspec-rails'
   gem 'guard-rspec', require: false
@@ -78,7 +60,6 @@ group :development, :test do
   gem 'factory_girl_rails'
   gem 'capybara'
   gem 'faker'
-  gem 'sqlite3'
   gem 'shoulda-matchers'
   gem 'quiet_assets'
   gem 'launchy'
