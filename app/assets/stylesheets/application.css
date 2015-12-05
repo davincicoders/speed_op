@@ -13,3 +13,11 @@
  *= require_tree .
  *= require_self
  */
+
+td.up {
+  background-color: #3c763d;
+}
+
+td.down {
+  background-color: #a94442;
+}

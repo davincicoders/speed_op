@@ -13,6 +13,7 @@ gem 'cancancan'
 gem 'json'
 gem 'omniauth', '~> 1.2.2'
 gem 'lunchy'
+gem 'resque', require: 'resque/server'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.4'
@@ -65,6 +66,7 @@ end
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
+  gem 'foreman'
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'

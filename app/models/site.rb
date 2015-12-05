@@ -7,8 +7,8 @@ class Site < ActiveRecord::Base
     :message => 'Please include http:// before the domain name.'
 
   def update_score
-    ps_d = Pagespeed.new(self, true)
-    ps_m = Pagespeed.new(self)
+    ps_d = Pagespeed.new(self)
+    ps_m = Pagespeed.new(self, true)
     self.webstats.create(
       pull_date: Time.zone.now,
       desktop_score: ps_d.speed,

@@ -46,18 +46,22 @@
   <table class="table table-striped table-bordered table-hover">
     <thead>
     <tr>
-      <th>URL</th>
+      <th>Date</th>
+      <th>Desktop Speed</th>
       <th>Mobile Speed</th>
       <th>Mobile Usability</th>
-      <th>Desktop Speed</th>
     </tr>
     </thead>
 
     <tbody>
-      <td><%= @site.url %></td>
-      <td><%= @mobile.speed %></td>
-      <td><%= @mobile.usability %></td>
-      <td><%= @desktop.speed %></td>
+    <% @site.webstats.each_with_index do |stat, index| %>
+      <tr>
+        <td><%= stat.pull_date.getlocal.strftime("%m/%d/%Y") %></td>
+        <td class='<%= up_down(stat.desktop_score, @site.webstats[index - 1].try(:desktop_score)) %>'><%= stat.desktop_score %></td>
+        <td><%= stat.mobile_score %></td>
+        <td><%= stat.mobile_usability %></td>
+      </tr>
+    <% end %>
     </tbody>
   </table>
 </div>
