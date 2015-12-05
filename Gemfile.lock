@@ -85,6 +85,8 @@ GEM
     ffi (1.9.10)
     figaro (1.1.1)
       thor (~> 0.14)
+    foreman (0.78.0)
+      thor (~> 0.19.1)
     formatador (0.2.5)
     globalid (0.3.6)
       activesupport (>= 4.1.0)
@@ -125,6 +127,9 @@ GEM
       guard-compat (~> 1.1)
       rspec (>= 2.99.0, < 4.0)
     hashie (3.4.3)
+    highcharts-rails (3.0.10)
+      railties (>= 3.1)
+    hurley (0.2)
     i18n (0.7.0)
     jbuilder (2.3.2)
       activesupport (>= 3.0.0, < 5)
@@ -158,6 +163,7 @@ GEM
     mime-types (2.99)
     mini_portile2 (2.0.0)
     minitest (5.8.3)
+    mono_logger (1.1.0)
     multi_json (1.11.2)
     multi_xml (0.5.5)
     multipart-post (2.0.0)
@@ -207,6 +213,8 @@ GEM
     quiet_assets (1.1.0)
       railties (>= 3.1, < 5.0)
     rack (1.6.4)
+    rack-protection (1.5.3)
+      rack
     rack-test (0.6.3)
       rack (>= 1.0)
     rails (4.2.4)
@@ -243,9 +251,18 @@ GEM
     rb-inotify (0.9.5)
       ffi (>= 0.5.0)
     rdoc (4.2.0)
+    redis (3.2.2)
+    redis-namespace (1.5.2)
+      redis (~> 3.0, >= 3.0.4)
     representable (2.4.0)
       declarative (~> 0.0.5)
       uber (~> 0.0.15)
+    resque (1.25.2)
+      mono_logger (~> 1.0)
+      multi_json (~> 1.0)
+      redis-namespace (~> 1.3)
+      sinatra (>= 0.9.2)
+      vegas (~> 0.1.2)
     retriable (2.1.0)
     rspec (3.4.0)
       rspec-core (~> 3.4.0)
@@ -290,6 +307,10 @@ GEM
     simple_form (3.2.0)
       actionpack (~> 4.0)
       activemodel (~> 4.0)
+    sinatra (1.4.6)
+      rack (~> 1.4)
+      rack-protection (~> 1.4)
+      tilt (>= 1.3, < 3)
     slop (3.6.0)
     spring (1.5.0)
     sprockets (3.5.0)
@@ -299,6 +320,7 @@ GEM
       actionpack (>= 3.0)
       activesupport (>= 3.0)
       sprockets (>= 2.8, < 4.0)
+    sqlite3 (1.3.11)
     thor (0.19.1)
     thread_safe (0.3.5)
     tilt (2.0.1)
@@ -308,6 +330,8 @@ GEM
     uglifier (2.7.2)
       execjs (>= 0.3.0)
       json (>= 1.8.0)
+    vegas (0.1.11)
+      rack (>= 1.0.0)
     web-console (2.2.1)
       activemodel (>= 4.0)
       binding_of_caller (>= 0.7.2)
@@ -332,6 +356,7 @@ DEPENDENCIES
   factory_girl_rails
   faker
   figaro
+  foreman
   google-api-client (= 0.9.pre3)
   guard-bundler
   guard-rspec
@@ -340,6 +365,7 @@ DEPENDENCIES
   jquery-rails
   json
   launchy
+  lunchy
   mail_form
   omniauth (~> 1.2.2)
   omniauth-facebook
@@ -351,6 +377,7 @@ DEPENDENCIES
   quiet_assets
   rails (= 4.2.4)
   rails_12factor
+  resque
   rspec-rails
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
