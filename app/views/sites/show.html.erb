@@ -1,4 +1,18 @@
+<div align="center">
 <h1><%= @site.name %></h1>
+</div>
+
+<div align="right">
+  <%= link_to sites_path, class: 'btn btn-default' do %>
+    <span class="glyphicon glyphicon-list-alt"></span>
+    Back
+  <% end %>
+  <%= link_to edit_site_path(@site), class: 'btn btn-primary' do %>
+    <span class="glyphicon glyphicon-pencil"></span>
+    Edit
+  <% end %>
+</div>
+
 <script type="text/javascript" charset="utf-8">
   $(function() {
     new Highcharts.Chart({
@@ -25,19 +39,8 @@
     });
   }); </script>   
 
-<div id="URLs" style="width:560px; height:300px;"></div>
-
-
-<div class="page-header">
-  <%= link_to sites_path, class: 'btn btn-default' do %>
-    <span class="glyphicon glyphicon-list-alt"></span>
-    Back
-  <% end %>
-  <%= link_to edit_site_path(@site), class: 'btn btn-primary' do %>
-    <span class="glyphicon glyphicon-pencil"></span>
-    Edit
-  <% end %>
-</div>
+<div id="URLs" align="center"></div>
+<br>
 
 <div class="table-responsive">
   <table class="table table-striped table-bordered table-hover">
