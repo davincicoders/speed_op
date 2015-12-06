@@ -18,7 +18,6 @@ gem 'resque', require: 'resque/server'
 gem 'mail_form'
 gem 'simple_form'
 gem 'whenever', :require => false
-gem 'sqlite3'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.4'
