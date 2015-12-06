@@ -1,7 +1,5 @@
-source 'https://rubygems.org'
 
-# gem 'lazy_high_charts'
-gem 'highcharts-rails'
+gem "highcharts-rails", "~> 3.0.0"
 # gem 'will_paginate'
 
 gem 'omniauth-github'
@@ -13,13 +11,14 @@ gem 'google-api-client', '0.9.pre3'
 gem 'cancancan'
 gem 'json'
 gem 'omniauth', '~> 1.2.2'
+gem 'lunchy'
+gem 'resque', require: 'resque/server'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.4'
 
 require 'rubygems'
 require 'rest-client'
-gem 'pg'
 
 group :production do
   gem 'rails_12factor'
@@ -45,14 +44,13 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 
-gem 'mail_form'
-gem 'simple_form'
-
-gem "figaro"
-
-gem 'whenever', :require => false
 # Use Unicorn as the app server
 # gem 'unicorn'
+
+gem 'mail_form'
+gem 'simple_form'
+gem "figaro"
+gem 'whenever', :require => false
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
@@ -76,7 +74,12 @@ end
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
+  gem 'foreman'
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
+end
+
+group :development, :test, :production do
+  gem 'pg'
 end
