@@ -23,17 +23,11 @@ Rails.application.config.middleware.use OmniAuth::Builder do
       end)}
 
 # tell omniauth to have the sessions controller direct in case of a failures
-# OmniAuth.config.on_failure = Proc.new do |env|
-#   SessionsController.action(:auth_failure).call(env)
-# end
+OmniAuth.config.on_failure = Proc.new do |env|
+  SessionsController.action(:auth_failure).call(env)
+end
 
 OmniAuth.config.full_host = 'http://dashboard.speedop.com/'
+end
 
-
-# Check out the tutorial for some info
-# https://www.twilio.com/blog/2014/09/gmail-api-oauth-rails.html\
-# Authentication with Google provides these tokens, which only last for 60 min
-# request.env['credentials']['access_token']
-# request.env['credentials']['refresh_token']
-# request.env['credentials']['expires_at']
 

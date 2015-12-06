@@ -27,7 +27,7 @@ class SessionsController < ApplicationController
   end
 
   def auth_failure
-    redirect_to 'https://www.google.com'
+    redirect_to 'https://www.youtube.com/watch?v=oo0d1zTAFKA'
   end
 end
 
