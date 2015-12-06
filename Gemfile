@@ -12,10 +12,13 @@ gem 'google-api-client', '0.9.pre3'
 gem 'cancancan'
 gem 'json'
 gem 'omniauth', '~> 1.2.2'
+gem 'lunchy'
+gem 'resque', require: 'resque/server'
 
 gem 'mail_form'
 gem 'simple_form'
 gem 'whenever', :require => false
+gem 'sqlite3'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.4'
