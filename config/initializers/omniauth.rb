@@ -1,16 +1,16 @@
 Rails.application.config.middleware.use OmniAuth::Builder do
-  provider :github, ENV['GITHUB_CLIENT_ID'], ENV['GITHUB_CLIENT_SECRET'],
+  provider :github, ENV['GITHUB_ID'], ENV['GITHUB_SECRET'],
     scope: 'user:email'
-  provider :twitter, ENV['TWITTER_CLIENT_ID'],
-    ENV['TWITTER_CLIENT_SECRET']
-  provider :facebook, ENV['FACEBOOK_CLIENT_ID'],
-    ENV['FACEBOOK_CLIENT_SECRET']
-  provider :linked_in, ENV['LINKEDIN_CLIENT_ID'], ENV['LINKEDIN_CLIENT_SECRET']
+  provider :twitter, ENV['TWITTER_ID'],
+    ENV['TWITTER_SECRET']
+  provider :facebook, ENV['FACEBOOK_ID'],
+    ENV['FACEBOOK_SECRET']
+  provider :linked_in, ENV['LINKEDIN_ID'], ENV['LINKEDIN_SECRET']
 
   # Google authentication was problematic at first
   # I had to provide the redirect_uri here
 
-  provider :google_oauth2, ENV['GOOGLE_CLIENT_ID'], ENV['GOOGLE_CLIENT_SECRET'], {client_options: {ssl: {ca_file: Rails.root.join("cacert.pem").to_s}},
+  provider :google_oauth2, ENV['GOOGLE_ID'], ENV['GOOGLE_SECRET'], {client_options: {ssl: {ca_file: Rails.root.join("cacert.pem").to_s}},
     scope: 'email profile',
     access_type: 'online',
     setup: (lambda do |env|
