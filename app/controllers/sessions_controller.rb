@@ -10,14 +10,14 @@ class SessionsController < ApplicationController
     if @user.persisted?
       session[:id] = @user.id
       redirect_to root_path,
-        notice: "Welcome back #{@user.first_name.titleize}
-        #{@user.last_name}!"
+                  notice: "Welcome back #{@user.first_name.titleize}
+                  #{@user.last_name}!"
     else
       render 'users/new'
     end
   end
 
-   layout false
+  layout false
   #
   def new
   end
@@ -26,19 +26,19 @@ class SessionsController < ApplicationController
   #   @auth = request.env['omniauth.auth']['credentials']
   # end
 
- #  def create
- #    user = User.find_by_email(params[:email])
- #    if user && user.authenticate(params[:password])
- #      # User provided valid auth creds
- #      session[:id] = user.id
- #      redirect_to root_path, notice: "Welcome back #{user.first_name.titleize}
- # #{user.last_name.titleize}!"
- #    else
- #      # User provided invalid creds
- #      flash[:error] = 'Invalid credentials'
- #      render :login
- #    end
- #  end
+  #  def create
+  #    user = User.find_by_email(params[:email])
+  #    if user && user.authenticate(params[:password])
+  #      # User provided valid auth creds
+  #      session[:id] = user.id
+  #      redirect_to root_path, notice: "Welcome back #{user.first_name.titleize}
+  # #{user.last_name.titleize}!"
+  #    else
+  #      # User provided invalid creds
+  #      flash[:error] = 'Invalid credentials'
+  #      render :login
+  #    end
+  #  end
 
 
   def create

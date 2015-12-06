@@ -1,4 +1,3 @@
-source 'https://rubygems.org'
 
 gem "highcharts-rails", "~> 3.0.0"
 # gem 'will_paginate'
@@ -17,6 +16,9 @@ gem 'resque', require: 'resque/server'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.4'
+
+require 'rubygems'
+require 'rest-client'
 
 group :production do
   gem 'rails_12factor'
@@ -45,6 +47,11 @@ gem 'bcrypt', '~> 3.1.7'
 # Use Unicorn as the app server
 # gem 'unicorn'
 
+gem 'mail_form'
+gem 'simple_form'
+gem "figaro"
+gem 'whenever', :require => false
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
@@ -58,6 +65,7 @@ group :development, :test do
   gem 'factory_girl_rails'
   gem 'capybara'
   gem 'faker'
+  gem 'sqlite3'
   gem 'shoulda-matchers'
   gem 'quiet_assets'
   gem 'launchy'

@@ -5,7 +5,7 @@
 # directories %w(app lib config test spec features) \
 #  .select{|d| Dir.exists?(d) ? d : UI.warning("Directory #{d} does not exist")}
 
-## Note: if you are using the `directories` clause above and you are not
+## Note: if you are using the 'directories' clause above and you are not
 ## watching the project directory ('.'), then you will want to move
 ## the Guardfile to a watched dir and symlink it back, e.g.
 #
@@ -36,9 +36,9 @@ end
 #  * zeus: 'zeus rspec' (requires the server to be started separately)
 #  * 'just' rspec: 'rspec'
 
-guard :rspec, cmd: "bundle exec rspec",
+guard :rspec, cmd: 'bundle exec rspec',
   all_on_start: true, all_after_pass: true do
-  require "guard/rspec/dsl"
+  require 'guard/rspec/dsl'
   dsl = Guard::RSpec::Dsl.new(self)
 
   # Feel free to open issues for suggestions and improvements
