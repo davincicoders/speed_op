@@ -29,9 +29,9 @@
     <div class="form-group">
     <p>
       <%= form.label :password_confirmation, 'Confirm' %><br>
-      <%= form.password_field :password_confirmation %>
+      <%= form.password_field :password_confirmation, :placeholder => "confirm" %>
     </p>
       </div>
   <% end %>
-  <%= form.submit 'Signup', class: 'btn btn-info' %>
+  <%= form.submit 'Signup', class: 'btn btn-primary' %>
 <% end %>

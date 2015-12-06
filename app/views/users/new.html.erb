@@ -1,6 +1,9 @@
 <% @title="- Signup" %>
 <div class="jumbotron">
   <div class="row">
+    <div class='col-md-8'>
+      <img src="/signup.jpg", class="img-responsive img-rounded" />
+    </div>
     <% unless @user.omniauth? %>
       <div class='col-md-4'>
         <!--<h1>Signup</h1>-->
@@ -28,10 +31,6 @@
         <li><a href="http://dashboard.speedop.com/auth/github"><i class="fa fa-github"></i> Github </a></li>
       </ul>
     </div>
-    </div>
-    <br>
-    <div class='col-md-8'>
-      <img src="/signup.jpg", class="img-responsive img-rounded" />
     </div>
     </div>
   </div>
