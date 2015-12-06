@@ -9,7 +9,7 @@
           Login with an Account <span class="caret"></span>
         </button>
         <ul class="dropdown-menu">
-          <li><%= link_to 'Login with Google', '/auth/google_oauth2' %></li>
+          <li><%= link_to 'Login with Google', '/auth/google' %></li>
           <li role="separator" class="divider"></li>
           <li><%= link_to 'Login with Twitter', '/auth/twitter' %></li>
           <li role="separator" class="divider"></li>
@@ -39,3 +39,8 @@
       <% end %>
     </div>
   </div>
+
+  <% @auth.each do |key, value| %>
+    <h1><%= key %> </h1>
+    <p><%= value %> </p>
+  <% end %>
