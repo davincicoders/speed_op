@@ -2,19 +2,19 @@
   <div class="form-group">
   <p>
     <%= form.label :first_name, 'First Name' %><br>
-    <%= form.text_field :first_name %>
+    <%= form.text_field :first_name, :placeholder => "ex. John" %>
     </div>
   </p>
   <div class="form-group">
   <p>
     <%= form.label :last_name, 'Last Name' %><br>
-    <%= form.text_field :last_name %>
+    <%= form.text_field :last_name, :placeholder => "ex. Doe" %>
   </p>
     </div>
   <div class="form-group">
   <p>
     <%= form.label :email %><br>
-    <%= form.text_field :email %>
+    <%= form.text_field :email, :placeholder => "ex. jd@example.com" %>
   </p>
     </div>
   <% if @user.omniauth? %>
@@ -23,7 +23,7 @@
     <div class="form-group">
     <p>
       <%= form.label :password %><br>
-      <%= form.password_field :password %>
+      <%= form.password_field :password, :placeholder => "min. 8 characters" %>
     </p>
       </div>
     <div class="form-group">
