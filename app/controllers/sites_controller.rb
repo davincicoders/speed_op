@@ -26,7 +26,6 @@ class SitesController < ApplicationController
   # POST /sites.json
   def create
     @site = Site.new(site_params)
-
     respond_to do |format|
       if @site.save
         format.html { redirect_to @site, notice: "#{@site.name} was successfully added." }

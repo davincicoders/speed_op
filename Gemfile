@@ -13,7 +13,11 @@ gem 'cancancan'
 gem 'json'
 gem 'omniauth', '~> 1.2.2'
 gem 'lunchy'
-gem 'resque', require: 'resque/server'
+
+gem 'resque', '~> 1.25', '>= 1.25.2', require: 'resque/server'
+gem 'resque-scheduler', '~> 4.0', :require => 'resque/scheduler/server'
+gem 'mailcatcher'
+
 
 gem 'mail_form'
 gem 'simple_form'
