@@ -16,6 +16,7 @@ gem 'lunchy'
 
 gem 'resque', '~> 1.25', '>= 1.25.2', require: 'resque/server'
 gem 'resque-scheduler', '~> 4.0', :require => 'resque/scheduler/server'
+gem 'resque_mailer'
 gem 'mailcatcher'
 
 

@@ -11,6 +11,8 @@ class SitesController < ApplicationController
   # GET /sites/1
   # GET /sites/1.json
   def show
+    @mobile = Pagespeed.new(@site, true)
+    @desktop = Pagespeed.new(@site)
   end
 
   # GET /sites/new
@@ -26,6 +28,7 @@ class SitesController < ApplicationController
   # POST /sites.json
   def create
     @site = Site.new(site_params)
+
     respond_to do |format|
       if @site.save
         format.html { redirect_to @site, notice: "#{@site.name} was successfully added." }
@@ -41,6 +44,8 @@ class SitesController < ApplicationController
   # PATCH/PUT /sites/1.json
   def update
     respond_to do |format|
+      # Resque.enqueue_in(30.seconds, FollowUpEmailWorker)   ### !!!!
+      FollowUpEmailJob.new(@user.email).enqueue(wait: 10.seconds)
       if @site.update(site_params)
         format.html { redirect_to @site, notice: "#{@site.name} was successfully updated." }
         format.json { render :show, status: :ok, location: @site }
@@ -62,13 +67,13 @@ class SitesController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_site
-      @site = Site.find(params[:id])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_site
+    @site = Site.find(params[:id])
+  end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def site_params
-      params.require(:site).permit(:url, :name)
-    end
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def site_params
+    params.require(:site).permit(:url, :name)
+  end
 end

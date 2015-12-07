@@ -1,4 +1,5 @@
 class UserMailer < ActionMailer::Base
+  include Resque::Mailer
   default from: 'info@speedop.com'
 
   # def digest_email_update(user)
@@ -13,13 +14,13 @@ class UserMailer < ActionMailer::Base
   #        subject: 'testing automated email service')
   # end
 
-  def follow_up_email(email)
-    @email = email
+  def follow_up_email(user)
+    @user = user
     @url = 'http://speedop.com'
     # attachments['Speed OP.docx'] = File.read('app/assets/files/Speed OP.docx')
     # attachments.inline['666.txt'] = File.read('app/assets/files/666.txt')
     # attachments.inline['octocat.png'] = File.read('app/assets/images/octocat.png')
-    mail(to: email,
+    mail(to: user,
          # bcc: 'info@speedop.com',
          bcc: 'sergeyskumatov@aol.com',
          subject: 'testing automated email service')
