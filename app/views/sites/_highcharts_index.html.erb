@@ -15,7 +15,7 @@
         <% @sites.each do |site| %>
         {
           name: '<%= site.name %>',
-          data: [<% site.webstats.each_with_index do |stat| %><%= "[Date.UTC(" + stat.pull_date.getlocal.strftime("%Y,%m,%e") + ")," + stat.mobile_score.to_s + "]," %><% end %>]
+          data: [<% site.webstats.each do |stat| %><%= "[Date.UTC(" + stat.pull_date.getlocal.strftime("%Y,%m,%e") + ")," + stat.mobile_score.to_s + "]," %><% end %>]
         },
         <% end %>
       ],
