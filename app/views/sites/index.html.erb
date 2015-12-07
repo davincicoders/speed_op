@@ -1,23 +1,4 @@
-<script type="text/javascript" charset="utf-8">
-  $(function() {
-    new Highcharts.Chart({
-      chart: {renderTo: "URLs"},
-      title: {text: "Mobile Speed Score"},
-      xAxis: {type: "datetime"},
-      yAxis: {title: {text: "(n/100)"}},
-      series: [
-        <% @sites.each do |site| %>
-        {
-          name: '<%= site.url %>',
-          pointInterval: <%= 1.day * 1000 %>,
-          pointStart: <%= 3.weeks.ago.to_i * 1000 %>,
-          data: <%= 21.times.map{ Random.rand(10..85) } %>
-        },
-        <% end %>
-      ],
-    });
-  });
-</script>
+<%= render 'highcharts_index' %>
 
 <div id="URLs" align:center;></div>
 
@@ -48,7 +29,7 @@
     <%= content_tag_for(:tr, @sites) do |site| %>
       <td><%= site.name %></td>
       <td><%= site.url %></td>
-      <td><%= '## n/100 (from API)' %></td>
+      <td> #latest score from DB </td>
       <td><%= link_to '', site, class: 'btn btn-primary glyphicon glyphicon-search' %></td>
       <td><%= link_to '', edit_site_path(site), class: 'btn btn-primary glyphicon glyphicon-pencil' %></td>
       <td><%= link_to '', site, method: :delete, data: {confirm: 'Are you sure?'}, class: 'btn btn-primary glyphicon glyphicon-trash' %></td>
