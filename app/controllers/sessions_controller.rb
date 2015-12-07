@@ -1,21 +1,26 @@
 class SessionsController < ApplicationController
-  # conveniently provides all hash info from omniauth
-  def hash_info
-    render text: request.env['omniauth.auth'].to_yaml
-  end
 
   # creates a session to authenticate
+
+  def index
+    render text: request.env['omniauth.auth'].to_yaml
+    redirect to
+  end
+
   def create
     begin
       # uses from_omniauth method that we create
       @user = User.from_omniauth(request.env['omniauth.auth'])
       session[:user_id] = @user.id
       flash[:success] = "Welcome, #{@user.name}!"
+      @user.omniauth = true
     rescue
       flash[:warning] = "There was an error while trying to authenticate you..."
     end
     redirect_to root_path
   end
+
+
 
   # destroys the session by getting rid of the user id
   def destroy
@@ -29,5 +34,21 @@ class SessionsController < ApplicationController
   def auth_failure
     redirect_to 'https://www.youtube.com/watch?v=oo0d1zTAFKA'
   end
+
+  def login
+  end
+
+  # private
+  # def omniauth_options
+  #   if auth_hash = request.env['omniauth.auth']
+  #     first_name, last_name = auth_hash[:info][:name].split(/\s+/, 2)
+  #     {
+  #       email: auth_hash[:info][:email],
+  #       first_name: first_name,
+  #       last_name: last_name,
+  #       omniauth: true
+  #     }
+  #   end
+  # end
 end
 

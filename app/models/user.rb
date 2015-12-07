@@ -1,8 +1,6 @@
 class User < ActiveRecord::Base
   has_many :sites
 
-  has_many :identities
-
   # find_or_create_by ensures that we don't create the same user
   # multiple times
 

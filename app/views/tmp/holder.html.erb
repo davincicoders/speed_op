@@ -38,15 +38,7 @@
             <span class="glyphicon glyphicon-dashboard"></span>
             Dashboard
           <% end %></li>
-
-        <% if current_user %>
-          <ul class="nav navbar-nav pull-right">
-            <li><%= image_tag(current_user.image_url, :size => "48x48", alt: current_user.name)
-            %></li>
-            <li><%= link_to 'Log Out', logout_path, method: :delete %></li>
-          </ul>
-        <% else %>
-        <li><%= link_to signup_path do %>
+        <li><%= link_to new_user_path do %>
             <span class="glyphicon glyphicon-edit"></span>
             Signup
           <% end %></li>
@@ -55,7 +47,6 @@
             Login
           <% end %></li>
       </ul>
-        <% end %>
     </div>
   </div>
 </nav>

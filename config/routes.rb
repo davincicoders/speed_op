@@ -1,11 +1,13 @@
 SpeedOp::Application.routes.draw do
   root "sites#index"
+  resources :sites
+  get 'signup', to: 'users#index'
+
+  # this provides the strategy for omniauth authentication
   match 'auth/:provider/callback', to: 'sessions#create', via: [:get,
        :post]
-  match 'logout', to: 'sessions#destroy', via: [:get, :post]
-  match 'login', to: 'sessions#create',  via: [:get, :post]
-  resources :sites
-  resources :users,
-    only: [:new, :create],
-     path_names: {new: "signup"}
+  delete 'logout', to: 'sessions#destroy'
+
+  match 'login', to: 'sessions#login',  via: [:get, :post]
+
  end

@@ -1,0 +1,65 @@
+
+<!-- start to display infomation about a logged in user -->
+
+<% if current_user %>
+  <div class="page-header">
+    <h1>Here is some info about you...</h1>
+  </div>
+  <div class="panel panel-default">
+    <div class="panel-body">
+      <ul>
+        <li><strong>Name:</strong> <%= current_user.name %></li>
+        <li><strong>Provider:</strong> <%= current_user.provider %></li>
+        <li><strong>uID:</strong> <%= current_user.uid %></li>
+        <li><strong>Location:</strong> <%= current_user.location %></li>
+        <li><strong>Avatar URL:</strong> <%= current_user.image_url %></li>
+        <li><strong>URL:</strong> <%= current_user.url %></li>
+      </ul>
+    </div>
+  </div>
+<% else %>
+
+  <!-- end to display infomation about a logged in user -->
+
+  <%= render 'welcome' %>
+
+  <% @title="- Signup" %>
+  <div class="jumbotron">
+    <div class="row">
+      <div class='col-md-8'>
+        <img src="/signup.jpg", class="img-responsive img-rounded" />
+      </div>
+      <% unless current_user %>
+        <div class='col-md-4'>
+          <!--<h1>Signup</h1>-->
+      <% else %>
+        <div class='col-md-4'>
+          <h1>Verify Details</h1>
+      <% end %>
+
+      <%= render 'users/form' %>
+      <br>
+      <!-- DropUp Signup Menu -->
+      <div class="btn-group dropup">
+        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Signup with an Account <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu">
+          <li><a href="http://dashboard.speedop.com/auth/google"><i class="fa fa-google"></i> Google </a></li>
+          <li role="separator" class="divider"></li>
+          <li><a href="http://dashboard.speedop.com/auth/twitter"><i class="fa fa-twitter"></i> Twitter </a></li>
+          <li role="separator" class="divider"></li>
+          <li><a href="http://dashboard.speedop.com/auth/linkedin"><i class="fa fa-linkedin"></i> LinkedIn </a></li>
+          <li role="separator" class="divider"></li>
+          <li><a href="http://dashboard.speedop.com/auth/facebook"><i class="fa fa-facebook"></i> Facebook </a></li>
+          <li role="separator" class="divider"></li>
+          <li><a href="http://dashboard.speedop.com/auth/github"><i class="fa fa-github"></i> Github </a></li>
+        </ul>
+      </div>
+      </div>
+      </div>
+    </div>
+  </div>
+
+<% end %>
+

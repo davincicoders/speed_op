@@ -27,7 +27,9 @@ OmniAuth.config.on_failure = Proc.new do |env|
   SessionsController.action(:auth_failure).call(env)
 end
 
-OmniAuth.config.full_host = 'http://dashboard.speedop.com'
+ # OmniAuth.config.full_host = 'http://127.0.0.1:3000'
+
+ OmniAuth.config.full_host = 'http://dashboard.speedop.com'
 end
 
 
