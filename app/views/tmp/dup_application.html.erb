@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Perfumery</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+
+
+<!--  start navbar -->
+
+
+
+<nav class="navbar navbar-inverse">
+  <div class="container">
+    <div class="navbar-header">
+      <%= link_to 'Social Freak', root_path, class: 'navbar-brand' %>
+    </div>
+    <div id="navbar">
+      <% if current_user %>
+        <ul class="nav navbar-nav pull-right">
+          <li><%= image_tag(current_user.image_url, :size => "48x48", alt: current_user.name)
+          %></li>
+          <li><%= link_to 'Log Out', logout_path, method: :delete %></li>
+        </ul>
+      <% else %>
+        <ul class="nav navbar-nav">
+          <li><%= link_to 'Twitter', '/auth/twitter' %></li>
+          <li><%= link_to 'Facebook', '/auth/facebook' %></li>
+          <li><%= link_to 'Google+', '/auth/google' %></li>
+          <li><%= link_to 'Github', '/auth/github' %></li>
+          <li><%= link_to 'LinkedIn', '/auth/linkedin' %></li>
+
+        </ul>
+      <% end %>
+    </div>
+  </div>
+</nav>
+
+<!-- end logout  -->
+
+<div class="container">
+  <% flash.each do |key, value| %>
+    <div class="alert alert-<%= key %>">
+      <%= value %>
+    </div>
+  <% end %>
+
+  <%= yield %>
+</div>
+
+
+</body>
+</html>

@@ -11,7 +11,6 @@ gem 'omniauth-google-oauth2'
 gem 'google-api-client', '0.9.pre3'
 gem 'cancancan'
 gem 'json'
-gem 'omniauth', '~> 1.2.2'
 gem 'lunchy'
 gem 'resque', require: 'resque/server'
 
@@ -61,6 +60,7 @@ group :development, :test do
   gem 'shoulda-matchers'
   gem 'quiet_assets'
   gem 'launchy'
+  gem 'thin'
 end
 
 group :development do
