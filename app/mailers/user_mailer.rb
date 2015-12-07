@@ -14,9 +14,9 @@ class UserMailer < ActionMailer::Base
          subject: 'testing automated email service')
   end
 
-  def follow_up_email(email)
-    @email = email
-    @url = 'http://speedop.com'
+  def follow_up_email(user)
+    @user = user
+    # @url = 'http://speedop.com'
     # attachments['Speed OP.docx'] = File.read('app/assets/files/Speed OP.docx')
     # attachments.inline['666.txt'] = File.read('app/assets/files/666.txt')
     # attachments.inline['octocat.png'] = File.read('app/assets/images/octocat.png')

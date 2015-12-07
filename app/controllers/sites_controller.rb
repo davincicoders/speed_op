@@ -44,8 +44,7 @@ class SitesController < ApplicationController
   # PATCH/PUT /sites/1.json
   def update
     respond_to do |format|
-      # Resque.enqueue_in(30.seconds, FollowUpEmailWorker)   ### !!!!
-      FollowUpEmailJob.new(@site.name).enqueue(wait: 1.seconds)
+      FollowUpEmailJob.new(@user).enqueue(wait: 1.seconds)
       if @site.update(site_params)
         format.html { redirect_to @site, notice: "#{@site.name} was successfully updated." }
         format.json { render :show, status: :ok, location: @site }
