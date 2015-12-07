@@ -42,8 +42,8 @@
       <tr>
         <td><%= stat.pull_date.getlocal.strftime("%m/%d/%Y") %></td>
         <td class='<%= up_down(stat.desktop_score, @site.webstats[index - 1].try(:desktop_score)) %>'><%= stat.desktop_score %></td>
-        <td><%= stat.mobile_score %></td>
-        <td><%= stat.mobile_usability %></td>
+        <td class='<%= up_down(stat.mobile_score, @site.webstats[index - 1].try(:mobile_score)) %>'><%= stat.mobile_score %></td>
+        <td class='<%= up_down(stat.mobile_usability, @site.webstats[index - 1].try(:mobile_usability)) %>'><%= stat.mobile_usability %></td>
       </tr>
     <% end %>
     </tbody>
