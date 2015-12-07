@@ -2,7 +2,7 @@ require 'resque/tasks'
 require 'resque/scheduler/tasks'
 
 namespace :resque do
-  task :send_email do
+  task :setup do
     # User.find_each do |user|
     #   UserMailer.send_email(user).deliver_now
     require 'resque'

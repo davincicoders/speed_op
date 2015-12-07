@@ -1,7 +1,7 @@
-class FollowUpEmailWorker < ActiveJob::Base
-  @queue = :email
+class FollowUpEmailJob < ActiveJob::Base
+  queue_as :email
 
-  def self.perform(email)
+  def perform(email)
     UserMailer.follow_up_email(email).deliver_now
   end
 end
