@@ -1,0 +1,24 @@
+<script type="text/javascript" charset="utf-8">
+  $(function() {
+    new Highcharts.Chart({
+      chart: {renderTo: "URLs"},
+      title: {text: "Mobile Speed Score"},
+      xAxis: {
+        type: "datetime",
+        dateTimeLabelFormats: {
+          month: '%e. %b',
+          year: '%b'
+        }
+      },
+      yAxis: {title: {text: "(n/100)"}},
+      series: [
+        <% @sites.each do |site| %>
+        {
+          name: '<%= site.name %>',
+          data: [<% site.webstats.each_with_index do |stat| %><%= "[Date.UTC(" + stat.pull_date.getlocal.strftime("%Y,%m,%e") + ")," + stat.mobile_score.to_s + "]," %><% end %>]
+        },
+        <% end %>
+      ],
+    });
+  });
+</script>
