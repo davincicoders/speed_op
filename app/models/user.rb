@@ -1,12 +1,6 @@
 class User < ActiveRecord::Base
   has_many :sites
 
-  # find_or_create_by ensures that we don't create the same user
-  # multiple times
-
-  # the users token can be accessed by
-  # auth_hash['credentials']['token'] (auth_hash['credentials']['secret'])
-
   class << self
     def from_omniauth(auth_hash)
       user = find_or_create_by(uid: auth_hash['uid'], provider: auth_hash['provider'])

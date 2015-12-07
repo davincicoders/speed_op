@@ -10,4 +10,13 @@ SpeedOp::Application.routes.draw do
 
   match 'login', to: 'sessions#login',  via: [:get, :post]
 
- end
+
+  resources :users,
+            only: [:new, :create],
+            path_names: {new: "signup"}
+  #
+
+  match '/contacts',     to: 'contacts#new',             via: 'get'
+  resources "contacts", only: [:new, :create]
+
+end
