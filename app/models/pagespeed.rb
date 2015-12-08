@@ -21,6 +21,16 @@ class Pagespeed
     results.rule_groups['USABILITY'].score
   end
 
+  def pagespeed_rule_impact(rule)
+    @issues ||= results.formatted_results.rule_results
+    @issues[rule].rule_impact
+  end
+
+  def pagespeed_rule_summary(rule)
+    @issues ||= results.formatted_results.rule_results
+    @issues[rule].localized_rule_name
+  end
+
   private
   def service
     Google::Apis::PagespeedonlineV2::PagespeedonlineService.new

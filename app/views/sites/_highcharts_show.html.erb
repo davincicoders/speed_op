@@ -41,7 +41,7 @@
       },
 
       title: {
-        text: 'Load Time'
+        text: ' '
       },
 
       pane: {
@@ -103,21 +103,21 @@
         plotBands: [{
           from: 0,
           to: 1000,
-          color: '#55BF3B' // green
+          color: '#609b61' // green
         }, {
           from: 1000,
           to: 4000,
-          color: '#DDDF0D' // yellow
+          color: '#F9BF3B' // yellow
         }, {
           from: 4000,
           to: 10000,
-          color: '#DF5353' // red
+          color: '#b25241' // red
         }]
       },
 
       series: [{
         name: 'Load Time',
-        data: [8000],
+        data: [<%= Random.rand(10000).to_s %>],
         tooltip: {
           valueSuffix: 'ms'
         }
