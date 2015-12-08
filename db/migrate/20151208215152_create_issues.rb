@@ -41,7 +41,7 @@ class CreateIssues < ActiveRecord::Migration
       t.float :minimize_blocking_impact_m
       t.string :minimize_blocking_summary_m
       t.float :minimize_blocking_impact_d
-      t.string :minimize_blocking_impact_m
+      t.string :minimize_blocking_summary_d
       t.float :avoid_plugins_impact_m
       t.string :avoid_plugins_summary_m
       t.float :configure_viewport_impact_m
