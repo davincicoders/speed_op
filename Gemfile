@@ -11,11 +11,23 @@ gem 'omniauth-google-oauth2'
 gem 'google-api-client', '0.9.pre3'
 gem 'cancancan'
 gem 'json'
+gem 'omniauth', '~> 1.2.2'
 gem 'lunchy'
-gem 'resque', require: 'resque/server'
+
+gem 'resque', '~> 1.25', '>= 1.25.2', require: 'resque/server'
+gem 'resque-scheduler', '~> 4.0', :require => 'resque/scheduler/server'
+gem 'resque_mailer'
+gem 'mailcatcher'
+
+
+gem 'mail_form'
+gem 'simple_form'
+gem 'whenever', :require => false
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.4'
+
+require 'rubygems'
 
 group :production do
   gem 'rails_12factor'
@@ -41,6 +53,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 
+gem "figaro"
+
 # Use Unicorn as the app server
 # gem 'unicorn'
 
@@ -49,7 +63,6 @@ gem 'bcrypt', '~> 3.1.7'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'dotenv-rails'
   gem 'byebug'
   gem 'rspec-rails'
   gem 'guard-rspec', require: false
