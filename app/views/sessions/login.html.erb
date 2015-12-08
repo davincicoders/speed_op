@@ -4,7 +4,7 @@
   <div class="row">
     <div class="col-xs-6 center-block">
       <!-- DropUp Signup Menu -->
-      <div class="btn-group dropup">
+      <div class="btn-group dropdown">
         <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Login with an Account <span class="caret"></span>
         </button>
@@ -40,7 +40,3 @@
     </div>
   </div>
 
-  <% @auth.each do |key, value| %>
-    <h1><%= key %> </h1>
-    <p><%= value %> </p>
-  <% end %>

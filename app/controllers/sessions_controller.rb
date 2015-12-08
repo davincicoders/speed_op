@@ -4,7 +4,7 @@ class SessionsController < ApplicationController
 
   def index
     render text: request.env['omniauth.auth'].to_yaml
-    redirect to
+    redirect_to index
   end
 
   def create
@@ -17,7 +17,7 @@ class SessionsController < ApplicationController
     rescue
       flash[:warning] = "There was an error while trying to authenticate you..."
     end
-    redirect_to root_path
+    redirect_to signup_path
   end
 
 
@@ -32,7 +32,7 @@ class SessionsController < ApplicationController
   end
 
   def auth_failure
-    redirect_to 'https://www.youtube.com/watch?v=oo0d1zTAFKA'
+    redirect_to 'http://www.angelfire.com/super/badwebs/'
   end
 
   def login

@@ -5,6 +5,7 @@ class CreateUsers < ActiveRecord::Migration
       t.string :location
       t.string :image_url
       t.string :url
+      t.string :email
       # provider and uid cannot be null and should be indexed
       t.string :provider, null: false
       t.string :uid, null: false
