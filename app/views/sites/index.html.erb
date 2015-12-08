@@ -38,15 +38,5 @@
     </tbody>
   </table>
 
-  <!-- DropUp Signup Menu -->
-  <div class="btn-group dropup">
-    <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-      Download Stats <span class="caret"></span>
-    </button>
-    <ul class="dropdown-menu">
-      <li><%= link_to "CSV", sites_path(format: "csv") %></li>
-      <li role="separator" class="divider"></li>
-      <li><%= link_to "Excel", sites_path(format: "xls") %></li>
-    </ul>
-  </div>
+      <%= link_to " Export Stats", sites_path(format: "csv"), class: 'btn btn-primary glyphicon glyphicon-export' %>
 </div>
