@@ -29,7 +29,7 @@
     <%= content_tag_for(:tr, @sites) do |site| %>
       <td><%= site.name %></td>
       <td><%= site.url %></td>
-      <td><% site.webstats.each_with_index do |stat| %><%= stat.mobile_score.to_s %><% end %></td>
+      <td><%= site.current_mobile_score %></td>
       <td><%= link_to '', site, class: 'btn btn-primary glyphicon glyphicon-search' %></td>
       <td><%= link_to '', edit_site_path(site), class: 'btn btn-primary glyphicon glyphicon-pencil' %></td>
       <td><%= link_to '', site, method: :delete, data: {confirm: 'Are you sure?'}, class: 'btn btn-primary glyphicon glyphicon-trash' %></td>
