@@ -7,7 +7,6 @@ SpeedOp::Application.routes.draw do
   match 'auth/:provider/callback', to: 'sessions#create', via: [:get,
        :post]
   delete 'logout', to: 'sessions#destroy'
-
   match 'login', to: 'sessions#login',  via: [:get, :post]
 
 

@@ -74,6 +74,7 @@ group :development, :test do
   gem 'quiet_assets'
   gem 'launchy'
   gem 'thin'
+  gem 'dotenv-rails'
 end
 
 group :development do

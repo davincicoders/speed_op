@@ -1,40 +1,22 @@
-<% @title="- Signup" %>
-<div class="jumbotron">
-  <div class="row">
-    <div class='col-md-8'>
-      <img src="/signup.jpg" , class="img-responsive img-rounded"/>
-    </div>
-    <% unless current_user %>
-      <div class='col-md-4'>
-        <!--<h1>Signup</h1>-->
-    <% else %>
-      <div class='col-md-4'>
-        <h1>Welcome to Speed Op</h1>
+<% provide(:title, 'Sign up') %>
+<h1>Sign up</h1>
 
-        <p>Signup using one your accounts to get started.</p>
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_for(@user) do |f| %>
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+
+      <%= f.label :email %>
+      <%= f.email_field :email %>
+
+      <%= f.label :password %>
+      <%= f.password_field :password %>
+
+      <%= f.label :password_confirmation, "Confirmation" %>
+      <%= f.password_field :password_confirmation %>
+
+      <%= f.submit "Create my account", class: "btn btn-primary" %>
     <% end %>
-
-    <%= render 'users/form' %>
-    <br>
-    <!-- DropUp Signup Menu -->
-    <div class="btn-group dropup">
-      <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        Signup with an Account <span class="caret"></span>
-      </button>
-      <ul class="dropdown-menu">
-        <li><a href="http://dashboard.speedop.com/auth/google"><i class="fa fa-google"></i> Google </a></li>
-        <li role="separator" class="divider"></li>
-        <li><a href="http://dashboard.speedop.com/auth/twitter"><i class="fa fa-twitter"></i> Twitter </a></li>
-        <li role="separator" class="divider"></li>
-        <li><a href="http://dashboard.speedop.com/auth/linkedin"><i class="fa fa-linkedin"></i> LinkedIn </a></li>
-        <li role="separator" class="divider"></li>
-        <li><a href="http://dashboard.speedop.com/auth/facebook"><i class="fa fa-facebook"></i> Facebook </a></li>
-        <li role="separator" class="divider"></li>
-        <li><a href="http://dashboard.speedop.com/auth/github"><i class="fa fa-github"></i> Github </a></li>
-      </ul>
-    </div>
-    </div>
-    </div>
   </div>
 </div>
-
