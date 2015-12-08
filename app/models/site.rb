@@ -3,6 +3,8 @@ class Site < ActiveRecord::Base
 
   has_many :webstats
 
+  after_save :update_score
+
   validates_format_of :url, :with => URI::regexp(%w(http https)),
     :message => 'Please include http:// before the domain name.'
 
@@ -22,5 +24,9 @@ class Site < ActiveRecord::Base
     all.each do |site|
       site.update_score
     end
+  end
+
+  def current_mobile_score
+    webstats.order(:pull_date).last.mobile_score
   end
 end
