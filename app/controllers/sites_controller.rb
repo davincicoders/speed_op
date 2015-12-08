@@ -6,7 +6,7 @@ class SitesController < ApplicationController
   def index
     @sites = Site.all
     @site = Site.new
-    @webstats = Webstat.order(:pull_date)
+    @webstats = Webstat.includes(:site).order(:pull_date)
     respond_to do |format|
       format.html
       format.csv { send_data @webstats.to_csv }
