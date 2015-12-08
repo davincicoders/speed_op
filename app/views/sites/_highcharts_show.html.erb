@@ -15,13 +15,15 @@
       series: [
         {
           name: 'Mobile Speed',
-          data: [<% @site.webstats.each do |stat| %><%= "[Date.UTC(" + stat.pull_date.getlocal.strftime("%Y, %m, %e") + ")," + stat.mobile_score.to_s + "]," %><% end %>]
+          data: [<% @site.webstats.each do |stat| %>
+            <%= "[Date.UTC(" + stat.pull_date.getlocal.months_ago(1).strftime("%Y, %m, %e") + ")," + stat.mobile_score.to_s + "]," %>
+            <% end %>]
         }, {
           name: 'Mobile UX',
-          data: [<% @site.webstats.each do |stat| %><%= "[Date.UTC(" + stat.pull_date.getlocal.strftime("%Y, %m, %e") + ")," + stat.mobile_usability.to_s + "]," %><% end %>]
+          data: [<% @site.webstats.each do |stat| %><%= "[Date.UTC(" + stat.pull_date.getlocal.months_ago(1).strftime("%Y, %m, %e") + ")," + stat.mobile_usability.to_s + "]," %><% end %>]
         }, {
           name: 'Desktop Speed',
-          data: [<% @site.webstats.each do |stat| %><%= "[Date.UTC(" + stat.pull_date.getlocal.strftime("%Y, %m, %e") + ")," + stat.desktop_score.to_s + "]," %><% end %>]
+          data: [<% @site.webstats.each do |stat| %><%= "[Date.UTC(" + stat.pull_date.getlocal.months_ago(1).strftime("%Y, %m, %e") + ")," + stat.desktop_score.to_s + "]," %><% end %>]
         }],
     });
   });
