@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151208082244) do
+ActiveRecord::Schema.define(version: 20151208215152) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -54,9 +54,10 @@ ActiveRecord::Schema.define(version: 20151208082244) do
     t.string   "visible_content_summary_m"
     t.float    "visible_content_impact_d"
     t.string   "visible_content_summary_d"
-    t.string   "minimize_blocking_impact_m"
+    t.float    "minimize_blocking_impact_m"
     t.string   "minimize_blocking_summary_m"
     t.float    "minimize_blocking_impact_d"
+    t.string   "minimize_blocking_summary_d"
     t.float    "avoid_plugins_impact_m"
     t.string   "avoid_plugins_summary_m"
     t.float    "configure_viewport_impact_m"
