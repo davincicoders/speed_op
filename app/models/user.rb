@@ -25,7 +25,7 @@ class User < ActiveRecord::Base
     def get_social_location_for(provider, location_hash)
       case provider
         when 'linkedin'
-          location_hash['name']
+          location_hash['location']
         else
           location_hash
       end

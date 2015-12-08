@@ -29,7 +29,6 @@ require 'rubygems'
 
 group :production do
   gem 'rails_12factor'
-  gem 'heroku'
 end
 
 # Use SCSS for stylesheets
@@ -64,6 +63,7 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
   gem 'rspec-rails'
+  gem 'dotenv-rails'
   gem 'guard-rspec', require: false
   gem 'guard-bundler'
   gem 'factory_girl_rails'
