@@ -31,6 +31,7 @@ require 'rubygems'
 
 group :production do
   gem 'rails_12factor'
+  gem 'heroku'
 end
 
 # Use SCSS for stylesheets
