@@ -6,7 +6,14 @@ class SitesController < ApplicationController
   def index
     @sites = Site.all
     @site = Site.new
+    @webstats = Webstat.order(:pull_date)
+    respond_to do |format|
+      format.html
+      format.csv { send_data @webstats.to_csv }
+      format.xls { send_data @webstats.to_csv(col_sep: "\t") }
+    end
   end
+
 
   # GET /sites/1
   # GET /sites/1.json
@@ -65,13 +72,14 @@ class SitesController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_site
-      @site = Site.find(params[:id])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_site
+    @site = Site.find(params[:id])
+  end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def site_params
-      params.require(:site).permit(:url, :name)
-    end
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def site_params
+    params.require(:site).permit(:url, :name)
+  end
+
 end

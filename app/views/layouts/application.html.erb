@@ -14,7 +14,7 @@
   <link href='https://fonts.googleapis.com/css?family=Droid+Sans:700' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
@@ -46,28 +46,29 @@
             <li><%= link_to 'Log Out', logout_path, method: :delete %></li>
           </ul>
         <% else %>
-        <li><%= link_to signup_path do %>
-            <span class="glyphicon glyphicon-edit"></span>
-            Signup
-          <% end %></li>
-        <li><%= link_to login_path do %>
-            <span class="glyphicon glyphicon-user"></span>
-            Login
-          <% end %></li>
+          <li><%= link_to signup_path do %>
+              <span class="glyphicon glyphicon-edit"></span>
+              Signup
+            <% end %></li>
+          <li><%= link_to login_path do %>
+              <span class="glyphicon glyphicon-user"></span>
+              Login
+            <% end %></li>
 
           <li><%= link_to contacts_path do %>
               <span class="glyphicon glyphicon-user"></span>
               Contact us
             <% end %></li>
-      </ul>
+          </ul>
         <% end %>
-    </div>
+        </div>
   </div>
 </nav>
-<div class="container" style="margin-bottom: 60px";>
+<div class="container" style="margin-bottom: 60px" ;>
   <% flash.each do |name, msg| %>
     <%= content_tag :div, class: "alert alert-#{ name == :error ? "danger" : "success" } alert-dismissable", role: "alert" do %>
-      <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+      <button type="button" class="close" data-dismiss="alert">
+        <span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
       <%= msg %>
     <% end %>
   <% end %>
@@ -75,22 +76,6 @@
   <%= yield %>
 </div>
 
-
-<div class="hidden-xs hidden-sm hidden-md navbar navbar-inverse navbar-fixed-bottom" role="navigation">
-
-  <div class="container">
-    <div class="navbar-text social pull-left">
-      <p class="social"><span class="glyphicon glyphicon-copyright-mark"></span><a href="http://speedop.com" class="social">&nbsp;SpeedOp.com</a></p>
-    </div>
-    <div class="navbar-text social pull-right">
-      <a href="mailto:info@speedop.com" class="social"></a><i class="fa fa-envelope fa-2x"></i>
-      <a href="http://twitter.com/speedop" class="social"></a><i class="fa fa-twitter fa-2x"></i>
-      <a href="http://github.com/davincicoders/speed_op" class="social"></a><i class="fa fa-github fa-2x"></i>
-    </div>
-
-  </div>
-
-</div>
 </body>
 
 </html>
