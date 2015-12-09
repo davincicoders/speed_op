@@ -13,9 +13,15 @@ SpeedOp::Application.routes.draw do
   resources :users,
             only: [:new, :create],
             path_names: {new: "signup"}
-  #
+
 
   match '/contacts',     to: 'contacts#new',             via: 'get'
   resources "contacts", only: [:new, :create]
+
+  # heroku logs
+
+  get 'static_pages/heroku_errors'
+  get 'static_pages/maintenance_heroku'
+
 
 end
