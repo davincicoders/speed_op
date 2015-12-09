@@ -14,7 +14,6 @@ gem 'json'
 gem 'omniauth', '~> 1.2.2'
 gem 'lunchy'
 
-gem 'delayed_job_active_record'
 gem 'resque', '~> 1.25', '>= 1.25.2', require: 'resque/server'
 gem 'resque-scheduler', '~> 4.0', :require => 'resque/scheduler/server'
 gem 'resque_mailer'
