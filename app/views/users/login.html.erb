@@ -22,6 +22,8 @@
       </div>>
     </div>
     ​
+    <% if new_user %>
+
     <div class="col-xs-4 col-xs-offset-2">
       <h1>Login</h1>
       <%= form_tag login_path do %>
@@ -30,6 +32,10 @@
           <%= text_field_tag :email %>
         </p>
         ​
+
+        <% end %>
+        Create your password
+
         <p>
           <%= label_tag :password %>
           <%= password_field_tag :password %>
