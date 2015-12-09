@@ -66,6 +66,11 @@ GEM
     debug_inspector (0.0.2)
     declarative (0.0.5)
       uber (>= 0.0.15)
+    delayed_job (4.1.1)
+      activesupport (>= 3.0, < 5.0)
+    delayed_job_active_record (4.1.0)
+      activerecord (>= 3.0, < 5)
+      delayed_job (>= 3.0, < 5)
     diff-lcs (1.2.5)
     dotenv (2.0.2)
     dotenv-rails (2.0.2)
@@ -375,6 +380,7 @@ DEPENDENCIES
   cancancan
   capybara
   coffee-rails (~> 4.1.0)
+  delayed_job_active_record
   dotenv-rails
   factory_girl_rails
   faker
