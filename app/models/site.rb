@@ -2,6 +2,8 @@ class Site < ActiveRecord::Base
   belongs_to :user
 
   has_many :webstats
+  has_many :desktop_issues, class_name: 'Issues::Desktop'
+  has_many :mobile_issues, class_name: 'Issues::Mobile'
   has_many :issues
 
   after_save :update_score
@@ -18,58 +20,26 @@ class Site < ActiveRecord::Base
       mobile_score: ps_m.speed,
       mobile_usability: ps_m.usability
     )
-    self.issues.create(
-      avoid_redirects_impact_m: ps_m.pagespeed_rule_impact('AvoidLandingPageRedirects'),
-      avoid_redirects_summary_m: ps_m.pagespeed_rule_summary('AvoidLandingPageRedirects'),
-      avoid_redirects_impact_d: ps_d.pagespeed_rule_impact('AvoidLandingPageRedirects'),
-      avoid_redirects_summary_d: ps_d.pagespeed_rule_summary('AvoidLandingPageRedirects'),
-      enable_compression_impact_m: ps_m.pagespeed_rule_impact('EnableGzipCompression'),
-      enable_compression_summary_m: ps_m.pagespeed_rule_summary('EnableGzipCompression'),
-      enable_compression_impact_d: ps_d.pagespeed_rule_impact('EnableGzipCompression'),
-      enable_compression_summary_d: ps_d.pagespeed_rule_summary('EnableGzipCompression'),
-      response_time_impact_m: ps_m.pagespeed_rule_impact('MainResourceServerResponseTime'),
-      response_time_summary_m: ps_m.pagespeed_rule_summary('MainResourceServerResponseTime'),
-      response_time_impact_d: ps_d.pagespeed_rule_impact('MainResourceServerResponseTime'),
-      response_time_summary_d: ps_d.pagespeed_rule_summary('MainResourceServerResponseTime'),
-      browser_caching_impact_m: ps_m.pagespeed_rule_impact('LeverageBrowserCaching'),
-      browser_caching_summary_m: ps_m.pagespeed_rule_summary('LeverageBrowserCaching'),
-      browser_caching_impact_d: ps_d.pagespeed_rule_impact('LeverageBrowserCaching'),
-      browser_caching_summary_d: ps_d.pagespeed_rule_summary('LeverageBrowserCaching'),
-      minify_javaScript_impact_m: ps_m.pagespeed_rule_impact('MinifyJavaScript'),
-      minify_javaScript_summary_m: ps_m.pagespeed_rule_summary('MinifyJavaScript'),
-      minify_javaScript_impact_d: ps_d.pagespeed_rule_impact('MinifyJavaScript'),
-      minify_javaScript_summary_d: ps_d.pagespeed_rule_summary('MinifyJavaScript'),
-      minify_html_impact_m: ps_m.pagespeed_rule_impact('MinifyHTML'),
-      minify_html_summary_m: ps_m.pagespeed_rule_summary('MinifyHTML'),
-      minify_html_impact_d: ps_d.pagespeed_rule_impact('MinifyHTML'),
-      minify_html_summary_d: ps_d.pagespeed_rule_summary('MinifyHTML'),
-      minify_css_impact_m: ps_m.pagespeed_rule_impact('MinifyCss'),
-      minify_css_summary_m: ps_m.pagespeed_rule_summary('MinifyCss'),
-      minify_css_impact_d: ps_d.pagespeed_rule_impact('MinifyCss'),
-      minify_css_summary_d: ps_d.pagespeed_rule_summary('MinifyCss'),
-      optimize_images_impact_m: ps_m.pagespeed_rule_impact('OptimizeImages'),
-      optimize_images_summary_m: ps_m.pagespeed_rule_summary('OptimizeImages'),
-      optimize_images_impact_d: ps_d.pagespeed_rule_impact('OptimizeImages'),
-      optimize_images_summary_d: ps_d.pagespeed_rule_summary('OptimizeImages'),
-      visible_content_impact_m: ps_m.pagespeed_rule_impact('PrioritizeVisibleContent'),
-      visible_content_summary_m: ps_m.pagespeed_rule_summary('PrioritizeVisibleContent'),
-      visible_content_impact_d: ps_d.pagespeed_rule_impact('PrioritizeVisibleContent'),
-      visible_content_summary_d: ps_d.pagespeed_rule_summary('PrioritizeVisibleContent'),
-      minimize_blocking_impact_m: ps_m.pagespeed_rule_impact('MinimizeRenderBlockingResources'),
-      minimize_blocking_summary_m: ps_m.pagespeed_rule_summary('MinimizeRenderBlockingResources'),
-      minimize_blocking_impact_d: ps_d.pagespeed_rule_impact('MinimizeRenderBlockingResources'),
-      minimize_blocking_summary_d: ps_d.pagespeed_rule_summary('MinimizeRenderBlockingResources'),
-      avoid_plugins_impact_m: ps_m.pagespeed_rule_impact('AvoidPlugins'),
-      avoid_plugins_summary_m: ps_m.pagespeed_rule_impact('AvoidPlugins'),
-      configure_viewport_impact_m: ps_m.pagespeed_rule_impact('ConfigureViewport'),
-      configure_viewport_summary_m: ps_m.pagespeed_rule_summary('ConfigureViewport'),
-      size_content_impact_m: ps_m.pagespeed_rule_impact('SizeContentToViewport'),
-      size_content_summary_m: ps_m.pagespeed_rule_summary('SizeContentToViewport'),
-      size_tap_targets_impact_m: ps_m.pagespeed_rule_impact('SizeTapTargetsAppropriately'),
-      size_tap_targets_summary_m: ps_m.pagespeed_rule_summary('SizeTapTargetsAppropriately'),
-      legible_font_size_impact_m: ps_m.pagespeed_rule_impact('UseLegibleFontSizes'),
-      legible_font_size_summary_m: ps_m.pagespeed_rule_summary('UseLegibleFontSizes')
-    )
+
+    expire_issues
+
+    ps_d.rule_result_keys.each do |key|
+      desktop_issues.create(
+        score: ps_d.score(key),
+        suggestion: ps_d.suggestion(key)
+      )
+    end
+
+    ps_m.rule_result_keys.each do |key|
+      mobile_issues.create(
+        score: ps_m.score(key),
+        suggestion: ps_m.suggestion(key)
+      )
+    end
+  end
+
+  def expire_issues
+    issues.active.update_all(expired_at: Time.now)
   end
 
   def self.update_scores

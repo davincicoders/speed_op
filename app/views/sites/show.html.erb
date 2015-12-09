@@ -69,9 +69,11 @@
     </thead>
 
     <tbody>
-      <tr>
-        <td><%=  %></td>
-      </tr>
+    <% @site.issues.each do |stat| %>
+      <tr><td><%= stat.avoid_redirects_impact_m %></td></tr>
+      <tr><td><%= stat.avoid_redirects_impact_d %></td></tr>
+      <tr><td><%= stat.avoid_redirects_summary_m %></td></tr>
+    <% end %>
     </tbody>
   </table>
   <table class="table table-striped table-bordered table-hover">

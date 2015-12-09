@@ -21,14 +21,16 @@ class Pagespeed
     results.rule_groups['USABILITY'].score
   end
 
-  def pagespeed_rule_impact(rule)
-    @issues ||= results.formatted_results.rule_results
-    @issues[rule].rule_impact
+  def rule_result_keys
+    @rule_result_keys ||= results.formatted_results.rule_results.keys
   end
 
-  def pagespeed_rule_summary(rule)
-    @issues ||= results.formatted_results.rule_results
-    @issues[rule].localized_rule_name
+  def score(key)
+    results.formatted_results.rule_results[key].rule_impact
+  end
+
+  def suggestion(key)
+    results.formatted_results.rule_results[key].localized_rule_name
   end
 
   private
