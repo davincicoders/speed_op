@@ -6,8 +6,13 @@ class Site < ActiveRecord::Base
 
   after_save :update_score
 
-  validates_format_of :url, :with => URI::regexp(%w(http https)),
-    :message => 'Please include http:// before the domain name.'
+  before_validation :smart_add_url_protocol
+
+  def smart_add_url_protocol
+    unless self.url[/\Ahttp:\/\//] || self.url[/\Ahttps:\/\//]
+      self.url = "http://#{self.url}"
+    end
+  end
 
   def update_score
     ps_d = Pagespeed.new(self)
