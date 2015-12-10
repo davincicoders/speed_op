@@ -17,7 +17,7 @@ class SessionsController < ApplicationController
     rescue
       flash[:warning] = "There was an error while trying to authenticate you..."
     end
-    redirect_to login_path
+    redirect_to root_path
   end
 
 
@@ -32,11 +32,12 @@ class SessionsController < ApplicationController
   end
 
   def auth_failure
-    redirect_to 'https://www.google.com'
+    flash[:danger] = 'Unable to log you in. Please try again.'
+    redirect_to login_path
   end
 
   def login
-    redirect_to login_path
+    redirect_to root_path
   end
 
   # private
