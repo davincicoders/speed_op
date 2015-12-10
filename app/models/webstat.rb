@@ -5,7 +5,7 @@ class Webstat < ActiveRecord::Base
     CSV.generate(options) do |csv|
       csv << column_names
       all.each do |webstat|
-        csv << [webstat.attributes.values_at(*column_names), webstat.site.url].flatten
+        csv << webstat.attributes.values_at(*column_names)
       end
     end
   end
