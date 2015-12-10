@@ -15,7 +15,7 @@ class SessionsController < ApplicationController
       flash[:success] = "Welcome, #{@user.name}!"
       @user.omniauth = true
     rescue
-      flash[:warning] = "There was an error while trying to authenticate you..."
+      flash[:warning] = 'There was an error while trying to authenticate you...'
     end
     redirect_to root_path
   end
@@ -26,7 +26,7 @@ class SessionsController < ApplicationController
   def destroy
     if current_user
       session.delete(:user_id)
-      flash[:success] = 'See you!'
+      flash[:success] = 'See ya!'
     end
     redirect_to root_path
   end

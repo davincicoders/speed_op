@@ -4,12 +4,17 @@ class SitesController < ApplicationController
   # GET /sites
   # GET /sites.json
   def index
-    @sites = Site.all
-    @site = Site.new
-    @webstats = Webstat.includes(:site).order(:pull_date)
-    respond_to do |format|
-      format.html
-      format.csv { send_data @webstats.to_csv }
+    if current_user.present?
+      @sites = current_user.sites
+      @site = Site.new
+      @webstats = Webstat.includes(:site).order(:pull_date)
+      respond_to do |format|
+        format.html
+        format.csv { send_data @webstats.to_csv }
+      end
+    else
+      redirect_to signup_path
+      # flash[:danger] = 'You must be logged in to see that page!'
     end
   end
 
@@ -35,6 +40,7 @@ class SitesController < ApplicationController
   # POST /sites.json
   def create
     @site = Site.new(site_params)
+    @site.user_id = current_user.id
 
     respond_to do |format|
       if @site.save
