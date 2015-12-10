@@ -46,3 +46,13 @@ td.down {
   border-radius: 10px;
   border: 6px solid #305A72;
 }
+
+.google-button {
+  background-color: #DD4B39;
+  color: #fff !important;
+  text-decoration: none !important;
+}
+.google-button:hover {
+  background-color: #DD4B39 !important;
+}
+
