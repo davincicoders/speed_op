@@ -6,9 +6,6 @@ class User < ActiveRecord::Base
 
   # the users token can be accessed by
   # auth_hash['credentials']['token'] (auth_hash['credentials']['secret'])
-
-
-
   
   class << self
     def from_omniauth(auth_hash)
