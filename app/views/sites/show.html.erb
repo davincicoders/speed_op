@@ -38,7 +38,7 @@
     </thead>
 
     <tbody>
-    <% @site.webstats.each_with_index do |stat, index| %>
+    <% @site.webstats.last(5).each_with_index do |stat, index| %>
       <tr>
         <td><%= stat.pull_date.getlocal.strftime("%m/%d/%Y") %></td>
         <td class='<%= up_down(stat.desktop_score, @site.webstats[index - 1].try(:desktop_score)) %>'><%= stat.desktop_score %></td>
