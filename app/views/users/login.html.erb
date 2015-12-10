@@ -1,38 +1,14 @@
 <% @title="- Login" %>
 ​
-<div class="jumbotron">
+<div class="jumbotron col-md-8 col-xs-8">
   <div class="row">
-    <div class="col-xs-6 center-block">
-      <!-- DropUp Signup Menu -->
-      <div class="btn-group dropdown">
-        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Login with an Account <span class="caret"></span>
-        </button>
-        <ul class="dropdown-menu">
-          <li><%= link_to 'Login with Google', '/auth/google' %></li>
-          <li role="separator" class="divider"></li>
-          <li><%= link_to 'Login with Twitter', '/auth/twitter' %></li>
-          <li role="separator" class="divider"></li>
-          <li><%= link_to 'Login with LinkedIn', '/auth/linkedin' %></li>
-          <li role="separator" class="divider"></li>
-          <li><%= link_to 'Login with Facebook', '/auth/facebook' %></li>
-          <li role="separator" class="divider"></li>
-          <li><%= link_to 'Login with GitHub', '/auth/github' %></li>
-        </ul>
-      </div>>
-    </div>
-    ​
-
-    <div class="col-xs-4 col-xs-offset-2">
-      <h1>Login</h1>
+    <div class="col-md-8 col-xs-8">
+      <h1 class="sign_up_text">Login</h1>
       <%= form_tag login_path do %>
         <p>
           <%= label_tag :email %>
           <%= text_field_tag :email %>
         </p>
-        ​
-
-        Create your password
 
         <p>
           <%= label_tag :password %>
@@ -40,12 +16,31 @@
         </p>
 
         <p>
-          <%= label_tag :password_confirmation %>
+          <%= label_tag :password_confirmation, 'Confirmation' %>
           <%= password_field_tag :password_confirmation %>
         </p>
         ​
-        <p class="button"><%= submit_tag 'Login' %></p>
-      <% end %>
+        <%= submit_tag 'Login', class: "btn btn-primary" %>
+      <% end %><br>
+
+        <!-- DropUp Signup Menu -->
+        <div class="btn-group dropup">
+          <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Login with an Account <span class="caret"></span>
+          </button>
+          <ul class="dropdown-menu">
+            <li><%= link_to 'Login with Google', '/auth/google' %></li>
+            <li role="separator" class="divider"></li>
+            <li><%= link_to 'Login with Twitter', '/auth/twitter' %></li>
+            <li role="separator" class="divider"></li>
+            <li><%= link_to 'Login with LinkedIn', '/auth/linkedin' %></li>
+            <li role="separator" class="divider"></li>
+            <li><%= link_to 'Login with Facebook', '/auth/facebook' %></li>
+            <li role="separator" class="divider"></li>
+            <li><%= link_to 'Login with GitHub', '/auth/github' %></li>
+          </ul>
+        </div>
+      </div>
     </div>
   </div>
 
