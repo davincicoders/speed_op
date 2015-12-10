@@ -11,5 +11,6 @@ class ApplicationController < ActionController::Base
 
   # this method allows the method to be accessed in views
   helper_method :current_user
+  helper_method :new_user
 
 end

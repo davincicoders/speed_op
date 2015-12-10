@@ -2,12 +2,20 @@ class UsersController < ApplicationController
   def index
 end
 
-  def new
-    @user = User.new
+  def login
+
   end
 
-  def new
-    @user = User.new
+  def create
+    @user = User.new(user_params)
+    FollowUpEmailJob.new(@user.email).enqueue(wait: 2.seconds)
+
+    if @user.save
+      redirect_to root_path,
+        notice: "Welcome to Speed Op #{@user.first_name.titleize} "
+    else
+      render :new
+    end
   end
 
   def show

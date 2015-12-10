@@ -2,14 +2,16 @@ Rails.application.config.middleware.use OmniAuth::Builder do
   provider :twitter, ENV['TWITTER_ID'], ENV['TWITTER_SECRET']
 
   provider :facebook, ENV['FACEBOOK_ID'], ENV['FACEBOOK_SECRET'],
-    scope: 'public_profile', info_fields: 'id,name,link'
+    scope: 'public_profile', info_fields: 'id,name,link,email'
 
-  provider :github, ENV['GITHUB_ID'], ENV['GITHUB_SECRET'],
+  provider :github, ENV['GITHUB_ID2'], ENV['GITHUB_SECRET2'],
     scope: 'user', image_aspect_ratio: 'square', image_size: 48
 
   provider :linkedin, ENV['LINKEDIN_ID'], ENV['LINKEDIN_SECRET'],
-    scope: 'r_basicprofile',
-    fields: ['id', 'first-name', 'last-name', 'location', 'picture-url', 'public-profile-url']
+    scope: 'r_basicprofile r_emailaddress',
+    fields: ['id', 'email-address', 'first-name', 'last-name', 'location',
+      'picture-url',
+      'public-profile-url']
 
 
 # Google oauth2 was difficult to get working because I had to provide

@@ -17,8 +17,6 @@ gem 'lunchy'
 gem 'resque', '~> 1.25', '>= 1.25.2', require: 'resque/server'
 gem 'resque-scheduler', '~> 4.0', :require => 'resque/scheduler/server'
 gem 'resque_mailer'
-gem 'mailcatcher'
-
 
 gem 'mail_form'
 gem 'simple_form'
@@ -65,6 +63,7 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
   gem 'rspec-rails'
+  gem 'dotenv-rails'
   gem 'guard-rspec', require: false
   gem 'guard-bundler'
   gem 'factory_girl_rails'
@@ -74,7 +73,7 @@ group :development, :test do
   gem 'quiet_assets'
   gem 'launchy'
   gem 'thin'
-  gem 'dotenv-rails'
+  gem 'mailcatcher'
 end
 
 group :development do
