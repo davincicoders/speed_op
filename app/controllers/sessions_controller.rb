@@ -33,8 +33,6 @@ class SessionsController < ApplicationController
 
   def auth_failure
     flash[:danger] = 'Unable to log you in. Please try again.'
-    flash[:warning] = 'Unable to log you in. Please try again.'
-    flash[:success] = 'Unable to log you in. Please try again.'
     redirect_to login_path
   end
 
