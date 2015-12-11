@@ -22,7 +22,7 @@ Rails.application.config.middleware.use OmniAuth::Builder do
       access_type: 'online', name: 'google',
       setup: (lambda do |env|
         request = Rack::Request.new(env)
-        env['omniauth.strategy'].options['token_params'] = {:redirect_uri => 'http://127.0.0.1:3000/auth/google/callback'}
+        env['omniauth.strategy'].options['token_params'] = {:redirect_uri => 'http://speed-op-now.herokuapp.com/auth/google/callback'}
       end)}
 
 # tell omniauth to have the sessions controller direct in case of a failures
@@ -30,9 +30,9 @@ OmniAuth.config.on_failure = Proc.new do |env|
   SessionsController.action(:auth_failure).call(env)
 end
 
- # OmniAuth.config.full_host = 'http://127.0.0.1:3000'
+ # OmniAuth.config.full_host = 'http://speed-op-now.herokuapp.com'
 
- OmniAuth.config.full_host = 'http://127.0.0.1:3000'
+ OmniAuth.config.full_host = 'http://speed-op-now.herokuapp.com'
 end
 
 
