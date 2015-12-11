@@ -14,7 +14,7 @@ class SitesController < ApplicationController
       end
     else
       redirect_to signup_path
-      # flash[:danger] = 'You must be logged in to see that page!'
+       flash[:danger] = 'You must be logged in to see that page!'
     end
   end
 
