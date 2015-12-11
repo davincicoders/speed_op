@@ -28,7 +28,7 @@ class SessionsController < ApplicationController
       session.delete(:user_id)
       flash[:success] = 'See ya!'
     end
-    redirect_to root_path
+    redirect_to signup_path
   end
 
   def auth_failure
