@@ -1,6 +1,7 @@
 class ContactsController < ApplicationController
   def new
     @contact = Contact.new
+    flash[:notice] = 'Thank you for your message. We will contact you soon!'
   end
 
   def create
