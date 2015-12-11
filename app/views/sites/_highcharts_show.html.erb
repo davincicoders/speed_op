@@ -80,7 +80,7 @@
       // the value axis
       yAxis: {
         min: 0,
-        max: 10000,
+        max: 1000,
 
         minorTickInterval: '0',
         minorTickWidth: 1,
@@ -98,26 +98,26 @@
           rotation: 'auto'
         },
         title: {
-          text: 'milliseconds'
+          text: 'Load Time (ms)'
         },
         plotBands: [{
           from: 0,
-          to: 1000,
+          to: 300,
           color: '#609b61' // green
         }, {
-          from: 1000,
-          to: 4000,
+          from: 300,
+          to: 600,
           color: '#F9BF3B' // yellow
         }, {
-          from: 4000,
-          to: 10000,
+          from: 600,
+          to: 1000,
           color: '#b25241' // red
         }]
       },
 
       series: [{
         name: 'Load Time',
-        data: [<%= Random.rand(10000).to_s %>],
+        data: [<%= @site.load_time %>],
         tooltip: {
           valueSuffix: 'ms'
         }

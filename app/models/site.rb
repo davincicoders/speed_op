@@ -16,6 +16,15 @@ class Site < ActiveRecord::Base
     end
   end
 
+  def load_time
+    require 'open-uri'
+    require 'date'
+    start = Time.new
+    open(self.url).read
+    stop = Time.new
+    return ((stop - start) * 1000).to_i
+  end
+
   def update_score
     ps_d = Pagespeed.new(self)
     ps_m = Pagespeed.new(self, true)
