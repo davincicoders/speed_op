@@ -22,7 +22,7 @@ class Site < ActiveRecord::Base
     start = Time.new
     open(self.url).read
     stop = Time.new
-    return (stop - start) * 1000
+    return ((stop - start) * 1000).to_i
   end
 
   def update_score
