@@ -12,7 +12,7 @@ Rails.application.config.middleware.use OmniAuth::Builder do
     fields: ['id', 'email-address', 'first-name', 'last-name', 'location',
       'picture-url',
       'public-profile-url']
-  
+
 # Google oauth2 was difficult to get working because I had to provide
 # information about the redirect uri
   provider :google_oauth2, ENV['GOOGLE_ID'], ENV['GOOGLE_SECRET'], {client_options: {ssl: {ca_file: Rails.root.join("cacert.pem").to_s}},
@@ -20,7 +20,7 @@ Rails.application.config.middleware.use OmniAuth::Builder do
       access_type: 'online', name: 'google',
       setup: (lambda do |env|
         request = Rack::Request.new(env)
-        env['omniauth.strategy'].options['token_params'] = {:redirect_uri => 'http://127.0.0.1:3000/auth/google/callback'}
+        env['omniauth.strategy'].options['token_params'] = {:redirect_uri => 'http://dashboard.speedop.com:3000/auth/google/callback'}
       end)}
 
 # tell omniauth to have the sessions controller direct in case of a failures
@@ -28,9 +28,9 @@ OmniAuth.config.on_failure = Proc.new do |env|
   SessionsController.action(:auth_failure).call(env)
 end
 
- # OmniAuth.config.full_host = 'http://127.0.0.1:3000'
+ # OmniAuth.config.full_host = 'http://dashboard.speedop.com:3000'
 
- OmniAuth.config.full_host = 'http://127.0.0.1:3000'
+ OmniAuth.config.full_host = 'http://dashboard.speedop.com:3000'
 end
 
 
