@@ -1,3 +1,4 @@
+OpenSSL::SSL::VERIFY_PEER = OpenSSL::SSL::VERIFY_NONE
 Rails.application.config.middleware.use OmniAuth::Builder do
   provider :twitter, ENV['TWITTER_ID'], ENV['TWITTER_SECRET']
 
@@ -13,8 +14,6 @@ Rails.application.config.middleware.use OmniAuth::Builder do
       'picture-url',
       'public-profile-url']
 
-# Google oauth2 was difficult to get working because I had to provide
-# information about the redirect uri
   provider :google_oauth2, ENV['GOOGLE_ID'], ENV['GOOGLE_SECRET'], {client_options: {ssl: {ca_file: Rails.root.join("cacert.pem").to_s}},
       scope: "email", image_aspect_ratio: 'square', image_size: 48,
       access_type: 'online', name: 'google',
