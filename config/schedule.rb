@@ -1,10 +1,9 @@
 # set :output, "viola_lv/workspace/davinci_coders_t3_2015/final_project/speed_op/log/cron.log"
-set :output, "/log/cron.log"
+# set :output, "/log/cron.log"
 
-every 1.minutes do # Many shortcuts available: :hour, :day, :month, :year, :reboot
-  # rake 'send_digest_email', :environment => :development, :output => {:error => 'log/error.log', :standard => 'log/cron.log'}
-  rake 'send_digest_email', :environment => :production, :output => {:error => 'log/error.log', :standard => 'log/cron.log'}
-  # rake 'files'
-
-  # rake 'send_digest_email', :output => {:error => 'log/error.log', :standard => 'log/cron.log'}
+every 59.minutes do # Many shortcuts available: :hour, :day, :month, :year, :reboot
+  rake 'send_digest_email', :environment => :development, :output => {:error => 'log/error.log', :standard => 'log/cron.log'}
+  rake 'send_digest_email', :environment => :production
 end
+
+

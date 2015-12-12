@@ -14,7 +14,7 @@ Rails.application.configure do
   config.consider_all_requests_local       = false
   config.action_controller.perform_caching = true
 
-  config.action_mailer.default_url_options = { :host => 'pacific-gorge-7733.herokuapp.com' }
+  config.action_mailer.default_url_options = { host: 'pacific-gorge-7733.herokuapp.com' }
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.perform_deliveries = true
   config.action_mailer.raise_delivery_errors = false
@@ -29,7 +29,7 @@ Rails.application.configure do
     password: ENV["GMAIL_PASSWORD"]
   }
               # !!!!!!!!!!
-  # $ heroku config:add GMAIL_USERNAME=no-reply@example.com GMAIL_PASSWORD=please
+  # heroku config:add GMAIL_USERNAME="speedopdavinci@gmail.com" GMAIL_PASSWORD=please
 
   # Enable Rack::Cache to put a simple HTTP cache in front of your application
   # Add `rack-cache` to your Gemfile before enabling this.
