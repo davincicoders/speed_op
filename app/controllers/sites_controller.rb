@@ -1,5 +1,5 @@
 class SitesController < ApplicationController
-  before_action :set_site, only: [:show, :edit, :update, :destroy]
+  before_action :set_site, only: [:show, :edit, :update, :destroy, :update_score]
 
   # GET /sites
   # GET /sites.json
@@ -17,7 +17,6 @@ class SitesController < ApplicationController
        flash[:danger] = 'You must be logged in to see that page!'
     end
   end
-
 
   # GET /sites/1
   # GET /sites/1.json
@@ -75,6 +74,11 @@ class SitesController < ApplicationController
       format.html { redirect_to sites_url, notice: "#{@site.name} was successfully deleted." }
       format.json { head :no_content }
     end
+  end
+
+  def update_score
+    @site.update_score
+    redirect_to @site, notice: "#{@site.name} was successfully updated."
   end
 
   private

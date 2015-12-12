@@ -1,6 +1,10 @@
 SpeedOp::Application.routes.draw do
   root "sites#index"
-  resources :sites
+  resources :sites do
+    member do
+      post 'update_score', as: 'update_score_for'
+    end
+  end
   get 'signup', to: 'users#index'
 
   # this provides the strategy for omniauth authentication
