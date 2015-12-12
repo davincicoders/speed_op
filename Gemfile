@@ -14,13 +14,15 @@ gem 'json'
 gem 'omniauth', '~> 1.2.2'
 gem 'lunchy'
 
-gem 'resque', '~> 1.25', '>= 1.25.2', require: 'resque/server'
+# SS block
+gem 'resque', '~> 1.25', require: 'resque/server'
 gem 'resque-scheduler', '~> 4.0', :require => 'resque/scheduler/server'
 gem 'resque_mailer'
-
 gem 'mail_form'
 gem 'simple_form'
 gem 'whenever', :require => false
+gem 'roo' # excel reader
+# /SS block
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.4'

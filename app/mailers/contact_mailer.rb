@@ -3,15 +3,11 @@ class ContactMailer < ActionMailer::Base
 
   def welcome_email(contact)
     @contact = contact
-    # @url = 'http://www.google.com'
+    @url = 'http://speedop.com'
     attachments['Speed OP.docx'] = File.read('app/assets/files/Speed OP.docx')
-    mail(to: @contact.email, bcc: 'info@speedop.com', subject: 'testing responce form', reply_to: 'info@speedop.com')
-
-    # format.html { render html: 'welcome_email'}
-    # format.text { render text: 'Get a real mail client!'}
-
-    # attachments['Speed OP.docx'] = File.read('/app/assets/files/Speed OP.docx')
-    # attachment :content_type => "images/jpeg",
-    #   :body => File.read("octocat.jpeg")
+    # attachments.inline['ie-1-1.gif'] = File.read('app/assets/images/ie-1-1.gif')
+    mail(to: @contact.email,
+         bcc: 'sergey_skumatov@hotmail.com',
+         subject: 'Testing the FORM_contact_mailer')
   end
 end
