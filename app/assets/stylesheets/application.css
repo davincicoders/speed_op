@@ -38,13 +38,14 @@ td.down {
 
 /*.simple_form label*/
 .simple_form {
-  max-width: 550px;
-  background: #FAFAFA;
-  padding: 30px;
+  max-width: 950px;
+  background: #eeeeee;
+  padding: 50px 50px 50px 50px;
   margin: 50px auto;
-  box-shadow: 1px 1px 25px rgba(0, 0, 0, 0.35);
-  border-radius: 10px;
-  border: 6px solid #305A72;
+  margin-top: 10px;
+  text-shadow: 1px 1px 1px #d6d6d6;
+  font: 16px "Helvetica Neue", Helvetica, Arial, sans-serif;
+  text-align: left;
 }
 
 .google-button {
