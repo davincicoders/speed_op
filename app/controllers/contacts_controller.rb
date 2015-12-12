@@ -8,7 +8,7 @@ class ContactsController < ApplicationController
     @contact.request = request
     if @contact.deliver
       flash[:notice] = 'Thank you for your message. We will contact you soon!'
-      redirect_to root_path
+      redirect_to signup_path
       ContactMailer.welcome_email(@contact).deliver
     else
       flash[:error] = 'Cannot send message.'
