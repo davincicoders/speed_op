@@ -12,7 +12,7 @@ end
 
     if @user.save
       redirect_to root_path,
-        notice: "Welcome to Speed Op #{@user.name.titleize} "
+        notice: "Welcome to Speed Op #{@user.first_name.titleize} "
     else
       render :new
     end
@@ -24,7 +24,7 @@ end
 
   def user_params
     params.require(:user).permit(
-      :name, :last_name, :email, :password, :password_confirmation,
+      :first_name, :last_name, :email, :password, :password_confirmation,
       :omniauth
     )
   end
