@@ -126,8 +126,6 @@ GEM
       guard (~> 2.1)
       guard-compat (~> 1.1)
       rspec (>= 2.99.0, < 4.0)
-    haml (4.0.7)
-      tilt
     hashie (3.4.3)
     highcharts-rails (3.0.10)
       railties (>= 3.1)
