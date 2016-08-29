@@ -1,3 +1,40 @@
+/* line 1, /Users/jonspeek/workspace/davinci_coders_t3_2015/speed_op/app/assets/stylesheets/custom.css.scss */
+.hidden {
+  display: none;
+}
+
+/*flash*/
+/* line 5, /Users/jonspeek/workspace/davinci_coders_t3_2015/speed_op/app/assets/stylesheets/custom.css.scss */
+.alert-error {
+  background-color: #f2dede;
+  border-color: #eed3d7;
+  color: #b94a48;
+  text-align: left;
+}
+
+/* line 12, /Users/jonspeek/workspace/davinci_coders_t3_2015/speed_op/app/assets/stylesheets/custom.css.scss */
+.alert-alert {
+  background-color: #f2dede;
+  border-color: #eed3d7;
+  color: #b94a48;
+  text-align: left;
+}
+
+/* line 19, /Users/jonspeek/workspace/davinci_coders_t3_2015/speed_op/app/assets/stylesheets/custom.css.scss */
+.alert-success {
+  background-color: #dff0d8;
+  border-color: #d6e9c6;
+  color: #468847;
+  text-align: left;
+}
+
+/* line 26, /Users/jonspeek/workspace/davinci_coders_t3_2015/speed_op/app/assets/stylesheets/custom.css.scss */
+.alert-notice {
+  background-color: #dff0d8;
+  border-color: #d6e9c6;
+  color: #468847;
+  text-align: left;
+}
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
@@ -10,9 +47,10 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
- *= require_tree .
- *= require_self
+
+
  */
+
 
 td.up {
   background-color: #609b61;
