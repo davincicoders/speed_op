@@ -15,15 +15,19 @@
       series: [
         {
           name: 'Mobile Speed',
-          data: [<% @site.webstats.each do |stat| %>
+          data: [<% @site.webstats.order(:pull_date).each do |stat| %>
             <%= "[Date.UTC(" + stat.pull_date.getlocal.months_ago(1).strftime("%Y, %m, %e") + ")," + stat.mobile_score.to_s + "]," %>
             <% end %>]
         }, {
-          name: 'Mobile UX',
-          data: [<% @site.webstats.each do |stat| %><%= "[Date.UTC(" + stat.pull_date.getlocal.months_ago(1).strftime("%Y, %m, %e") + ")," + stat.mobile_usability.to_s + "]," %><% end %>]
+          name: 'Mobile Usability',
+          data: [<% @site.webstats.order(:pull_date).each do |stat| %>
+            <%= "[Date.UTC(" + stat.pull_date.getlocal.months_ago(1).strftime("%Y, %m, %e") + ")," + stat.mobile_usability.to_s + "]," %>
+            <% end %>]
         }, {
           name: 'Desktop Speed',
-          data: [<% @site.webstats.each do |stat| %><%= "[Date.UTC(" + stat.pull_date.getlocal.months_ago(1).strftime("%Y, %m, %e") + ")," + stat.desktop_score.to_s + "]," %><% end %>]
+          data: [<% @site.webstats.order(:pull_date).each do |stat| %>
+            <%= "[Date.UTC(" + stat.pull_date.getlocal.months_ago(1).strftime("%Y, %m, %e") + ")," + stat.desktop_score.to_s + "]," %>
+            <% end %>]
         }],
     });
   });
@@ -117,7 +121,7 @@
 
       series: [{
         name: 'Load Time',
-        data: [<%= @site.load_time %>],
+        data: [<%= Random.rand(1000) %>],
         tooltip: {
           valueSuffix: 'ms'
         }

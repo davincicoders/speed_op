@@ -3,17 +3,12 @@
 
 <% if current_user %>
   <div class="page-header">
-    <h1>Here is some info about you...</h1>
+    <h1>You're now logged in</h1>
   </div>
   <div class="panel panel-default">
     <div class="panel-body">
       <ul>
         <li><strong>Name:</strong> <%= current_user.name %></li>
-        <li><strong>Provider:</strong> <%= current_user.provider %></li>
-        <li><strong>uID:</strong> <%= current_user.uid %></li>
-        <li><strong>Location:</strong> <%= current_user.location %></li>
-        <li><strong>Avatar URL:</strong> <%= current_user.image_url %></li>
-        <li><strong>URL:</strong> <%= current_user.url %></li>
       </ul>
     </div>
   </div>
@@ -45,15 +40,15 @@
           Signup with an Account <span class="caret"></span>
         </button>
         <ul class="dropdown-menu">
-          <li><a href="http://127.0.0.1:3000/auth/google"><i class="fa fa-google"></i> Google </a></li>
+          <li><a href="http://dashboard.speedop.com/auth/google"><i class="fa fa-google"></i> Google </a></li>
           <li role="separator" class="divider"></li>
-          <li><a href="http://127.0.0.1:3000/auth/twitter"><i class="fa fa-twitter"></i> Twitter </a></li>
+          <li><a href="http://dashboard.speedop.com/auth/twitter"><i class="fa fa-twitter"></i> Twitter </a></li>
           <li role="separator" class="divider"></li>
-          <li><a href="http://127.0.0.1:3000/auth/linkedin"><i class="fa fa-linkedin"></i> LinkedIn </a></li>
+          <li><a href="http://dashboard.speedop.com/auth/linkedin"><i class="fa fa-linkedin"></i> LinkedIn </a></li>
           <li role="separator" class="divider"></li>
-          <li><a href="http://127.0.0.1:3000/auth/facebook"><i class="fa fa-facebook"></i> Facebook </a></li>
+          <li><a href="http://dashboard.speedop.com/auth/facebook"><i class="fa fa-facebook"></i> Facebook </a></li>
           <li role="separator" class="divider"></li>
-          <li><a href="http://127.0.0.1:3000/auth/github"><i class="fa fa-github"></i> Github </a></li>
+          <li><a href="http://dashboard.speedop.com/auth/github"><i class="fa fa-github"></i> Github </a></li>
         </ul>
       </div>
       </div>
